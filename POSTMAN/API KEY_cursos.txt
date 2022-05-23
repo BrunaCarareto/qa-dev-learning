@@ -1,0 +1,22 @@
+API KEY GERADA
+----------------------------------------------------------------
+PMAK-6288047c2150495125a3c35d-7f92072c9ce5073a015cd807ffeb8c3000
+----------------------------------------------------------------
+
+Link para listar todas as coleções do ambiente
+-------------------------------------------------
+https://api.getpostman.com/collections?apikey=PMAK-6288047c2150495125a3c35d-7f92072c9ce5073a015cd807ffeb8c3000
+
+
+Link para listas dados coleção específica (GO REST)
+----------------------------------------------------
+https://api.getpostman.com/collections/187358aa-dcf8-4ba1-85b0-5f2fd303383a?apikey=PMAK-6288047c2150495125a3c35d-7f92072c9ce5073a015cd807ffeb8c3000
+
+Link para obter a URL dos ambientes
+------------------------------------
+https://api.getpostman.com/environments?apikey=PMAK-6288047c2150495125a3c35d-7f92072c9ce5073a015cd807ffeb8c3000
+
+
+Comando a ser executado no POSTMAN
+-----------------------------------
+newman run https://api.getpostman.com/collections/187358aa-dcf8-4ba1-85b0-5f2fd303383a?apikey=PMAK-6288047c2150495125a3c35d-7f92072c9ce5073a015cd807ffeb8c3000 --environment https://api.getpostman.com/environments/b20b17e9-b922-49ef-a7bc-940ba300bd3d?apikey=PMAK-6288047c2150495125a3c35d-7f92072c9ce5073a015cd807ffeb8c3000

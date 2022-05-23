@@ -1,0 +1,69 @@
+ATENÇÃO
+----------
+Indicação para o curso gratuito (fundamentos do scrum) tem desconto de $50 dolares em outras certificações
+O exame pode ser realizado várias vezes caso não passar na primeira vez de forma gratuita
+
+SCRUM = Franmwork agil
+SPRINT = DE 1 A 6 SEMANAS
+
+REUNIÕES DO SPRINT
+-------------------
+PLANNING - Planejamento do sprint, criação das tarefas, estimativas de tempo, definição de entregas
+DAILY - Reuniões diárias para entender o que foi feito ontem, o que será feito hoje e possiveis impedimentos REVIEW
+REVIEW - Reunião fechamento do sprint, onde, o scrum master apresenta para o PO e os stackholders as tarefas entregues para avaliar se estão de acordo ou não com o planejamento
+RETROSPECTIVE = Reunião feita para encerrar o sprint, onde o time discute formas de melhor processos e performance de entregas
+
+PAPEIS DO SCRUM
+-------------------
+*ESSENCIAL*
+PRODUCT OWNERS = Dono do produto, levantamento das preocupações e necessidades dos clientes/stakeholders, levantamento riscos, necessidades, prioridades
+SCRUM MASTERS = Orienta as pessoas do time a seguirem as praticas do scrum, atua como um facilitador, responsável por remover impedimentos
+TIME SCRUM = Responsavel por desenvolver os projetos
+
+*NÃO ESSENCIAL*
+STAKEHOLDES = Clientes, usuários, patrocinadores, diretoria, coordenação
+SCRUM GUIDANCE BODY = Conjunto de documentos ou grupo de especilistas envolvidos na definição do objetivos relacionados a qualidade, regulamentações governamentis, segurança , entre outros . Que, tem como objetivo orientar o scrum master, PO, e time scrum durante a realização do projeto
+FORNEEDORES = Inclui organizações externas que disponibilizam produtos ou serviços para o desenvolvimento do projeto 
+
+
+NIVEIS DE CERTIFICAÇÃO SCRUM
+--------------------------------
+SDC (SCRUM DEVELOPER CERTIFIED) - inicial para todos os papeis do scrum;
+SMC (SRUM MASTER CERTIFIED) - ideal para quem desempenha o papel de scrum master - conhecimento pratico de mercado;
+SPOC (PRODUCT OWNER CERTIFIED) - ideal para quem desempenha o papel de PO - conhecimento mercado com capacidade de lidar com necessidades negocio
+SAMC (SCRUM AGILE MASTER CERTIFIED) - habilidade agil para comparar e escolher qual metodologia será adequada para cada situação;
+
+ESMC (EXPERT SCRUM MASTER CERTIFIED) / SSPOC (SCALES SCRUM PRODUCT OWNER CERTIIED) --> certificações avançadas para SCRUM MASTER e PO
+SSMC (SCALED SCRUM MASTER CERTIFIED) --> Para gerenciar multiplos times de Scrum ao mesmo tempo como MASTER SCRUM MASTER
+SSPOC (SCALE SCRUM PRODUCT OWNER CERTIFIED) --> Para gerenciar multiplos times de Scrum ao mesmo tempo como MASTER PO
+
+
+DIVISÃO DO SCRUM
+-----------------
+PRINCIPIOS DO SCRUM (Controle de processos, organização, colaboração, priorização de valores, time-boxing, desenvolvimento interativo)
+ASPECTOS SCRUM (Organização,  justificativa do negócio, qualidade, mudança e risco)
+PROCESSOS (19 processos fundamentais e 8 adicionais) Devem ser dividos em 5 fases (iniciar, planejamento, estimar, implementar, revisar , retrospectiva de melhoria de processos, liberação do release - PRODUTO)
+
+
+
+FERRAMENTAS E TECNICAS QUE PODEM SER UTILIZADAS
+-------------------------------------------------
+WIDEBAND DELPHI =  Tecnica de estimativa baseada pelo grupo. Cada integrante do grupo da a sua respectiva estimativa (tempo) para determinada tarefa de forma anonima por meio disso é possivel fazer uma média. O procedimento pode ser feito várias vezes até a equipe estar de acordo com o tempo proposto (TECNICA MAIS COMPLEXA COM MUITOS CRITÉRIOS)
+
+PLANING POKER = Tecnica de estimativa baseada apenas nas tarefas de estorias para delimitar o escopo do projeto. Cartas que definem a pontuação de uma determinada estoria (STORY POINT). Todos apresentam a pontuação definida ao mesmo tempo colocando justificativa para a escolha. O procedimento pode ser feito várias vezes até a equipe estar de acordo (TECNICA MAIS RAPIDA E DINAMICA)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

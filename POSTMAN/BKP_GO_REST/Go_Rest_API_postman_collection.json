@@ -1,0 +1,1008 @@
+{
+	"info": {
+		"_postman_id": "187358aa-dcf8-4ba1-85b0-5f2fd303383a",
+		"name": "Go Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20978329"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Criar usuários",
+					"item": [
+						{
+							"name": "POST - Novo usuário [Sucess]",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"console.log(\"pre-script executado na requisição\")\r",
+											"\r",
+											"// PRE SCRIPT INFO\r",
+											"console.log(pm.info.eventName)\r",
+											"console.log(pm.info.iteration)\r",
+											"console.log(pm.info.iterationCount)\r",
+											"console.log(pm.info.requestId)\r",
+											"console.log(pm.info.requestName)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.request.method == 'POST')\r",
+											"{\r",
+											"    //resposta sucesso\r",
+											"    pm.test(\"Uhull - Cadastro realizado com sucesso [Success 201]\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201,202])\r",
+											"    })\r",
+											"};"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"{{$randomFullName}}\", \r\n    \"email\":\"{{$randomEmail}}\", \r\n    \"gender\":\"female\",\r\n    \"status\":\"active\"\r\n }\r\n ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Novo usuário [Sucess] - com arquivo externo",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"// pegando dados de um arquivo (CSV ou JSON externo) ao rodar a coleção\r",
+											"pm.iterationData.get(\"name_user\"),\r",
+											"pm.iterationData.get(\"email_user\"),\r",
+											"pm.iterationData.get(\"gender_user\"),\r",
+											"pm.iterationData.get(\"status_user\")"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.request.method == 'POST')\r",
+											"{\r",
+											"    //resposta sucesso\r",
+											"    pm.test(\"Uhull - Cadastro realizado com sucesso [Success 201]\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201,202])\r",
+											"    })\r",
+											"};"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"{{name_user}}\", \r\n    \"email\":\"{{email_user}}\", \r\n    \"gender\":\"{{gender_user}}\", \r\n    \"status\":\"{{status_user}}\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Novo usuário  [Error] - já cadastrado",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"console.log(\"pre-script executado na requisição\")\r",
+											"\r",
+											"// PRE SCRIPT INFO\r",
+											"console.log(pm.info.eventName)\r",
+											"console.log(pm.info.iteration)\r",
+											"console.log(pm.info.iterationCount)\r",
+											"console.log(pm.info.requestId)\r",
+											"console.log(pm.info.requestName)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.request.method == 'POST')\r",
+											"{\r",
+											"    //resposta erro - usuário já cadastrado\r",
+											"    pm.test(\"Ops - Dados já estão cadastrados [Error 422]\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"has already been taken\")\r",
+											"    console.log(\"Dados já cadastrado - tente novamente\")\r",
+											"    })\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Bruna\", \r\n    \"gender\":\"female\", \r\n    \"email\":\"bruna@hotmail.com\", \r\n    \"status\":\"active\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Novo usuário  [Error] - sem dados obrigatórios",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"console.log(\"pre-script executado na requisição\")\r",
+											"\r",
+											"// PRE SCRIPT INFO\r",
+											"console.log(pm.info.eventName)\r",
+											"console.log(pm.info.iteration)\r",
+											"console.log(pm.info.iterationCount)\r",
+											"console.log(pm.info.requestId)\r",
+											"console.log(pm.info.requestName)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.request.method == 'POST')\r",
+											"{\r",
+											"    //resposta erro - dados em branco\r",
+											"    pm.test(\"Ops - Dados obrigatórios não foram preenchidos - [Error 422]\", function (){\r",
+											"    pm.expect(pm.response.text()).include(\"can't be blank\")\r",
+											"    console.log(\"Dados obrigatórios não foram preenchidos\")\r",
+											"    })\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gender\":\"female\", \r\n    \"status\":\"active\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Executando testes para criação de usuários utilizando GO REST API\n\n### **Resultados esperados (Sucesso)**\n\n*   `Respose code in: 200,201,202 (Inserindo novo usuário)`\n    \n\n### **Resultados esperados (Erro)**\n\n*   `Resultado contendo a mensagem: \"has already been taken\" e \"can't be blank\"`\n    \n\n``` json\n[\n    {\n        \"field\": \"email\",\n        \"message\": \"has already been taken\"\n    }\n]\n[\n    {\n        \"field\": \"email\",\n        \"message\": \"can't be blank\"\n    }\n\n]\n\n```"
+				},
+				{
+					"name": "Editar usuários",
+					"item": [
+						{
+							"name": "PATCH  - Atualizar usuário",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Uhull - Usuário atulizado - [Sucess 200]\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Bruna Ramos Carareto - atualizado\", \r\n    \"gender\":\"female\", \r\n    \"email\":\"brunaramoscarareto@hotmail.com\", \r\n    \"status\":\"inactive\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users/10068",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"10068"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Executando testes para edição de usuários utilizando GO REST API\n\n### **Resultados esperados (Sucesso)**\n\n*   `Respose code in: 200 (Usuário editado)`"
+				},
+				{
+					"name": "Consultar usuários",
+					"item": [
+						{
+							"name": "GET Listando todos usuarios",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users/",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Listando um usuário (path variable)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users/:id",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2505"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Listando um usuário (query params)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users/?gender=male&name=lal",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										""
+									],
+									"query": [
+										{
+											"key": "gender",
+											"value": "male"
+										},
+										{
+											"key": "name",
+											"value": "lal"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Listando um usuário (variavel)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"id\",\"2505\");\r",
+											"\r",
+											"// PRE SCRIPT VARIAVEIS\r",
+											"console.log(pm.variables.get(\"id\"));\r",
+											"\r",
+											"if(pm.variables.get(\"id\") == 2505){\r",
+											"    console.log(\"ID correto enviado\")\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"ID erradooooooooo\")\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users/{{id}}",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"{{id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token_rest}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"pre-script executado na pasta\")"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Criar post",
+					"item": [
+						{
+							"name": "POST Criando novo post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\":4023,\r\n    \"title\":\"Meu terceiro POST\",\r\n    \"body\":\"Detalhando o meu terceiro POST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/posts",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Editar post",
+					"item": [
+						{
+							"name": "PATCH editando post",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Meu primeiro POST - editado\",\r\n    \"body\": \"Detalhando o meu primeiro POST - editado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/posts/2586",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"posts",
+										"2586"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Remover post",
+					"item": [
+						{
+							"name": "DELETE post",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/posts/2590",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"posts",
+										"2590"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consultar post",
+					"item": [
+						{
+							"name": "GET Listando post",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/posts/",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"posts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Listando post (path variavel)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/posts/1958",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"posts",
+										"1958"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Remover usuários",
+					"item": [
+						{
+							"name": "DELETE usuário",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/users/9838",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"9838"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Coments",
+			"item": [
+				{
+					"name": "Criar comentário",
+					"item": [
+						{
+							"name": "POST criar novo comentário",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"post_id\":2593,\r\n\"name\":\"Bruna carareto\",\r\n\"email\":\"carareto@yopmail.com\",\r\n\"body\":\"Quod error autem - test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/comments",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Editar comentários",
+					"item": [
+						{
+							"name": "PATCH Editar comentário",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"post_id\": 2593,\r\n    \"name\": \"Bruna carareto - editado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/comments/:idcomentario",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"comments",
+										":idcomentario"
+									],
+									"variable": [
+										{
+											"key": "idcomentario",
+											"value": "2305"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consultar comentário",
+					"item": [
+						{
+							"name": "GET Listando comentários",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/comments",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Listando comentários (path variavel)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/comments/:idComents",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"comments",
+										":idComents"
+									],
+									"variable": [
+										{
+											"key": "idComents",
+											"value": "1973"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Remover comentário",
+					"item": [
+						{
+							"name": "GET Listando comentários (path variavel) Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_gorest}}/public/v2/comments/:idComents",
+									"host": [
+										"{{url_api_gorest}}"
+									],
+									"path": [
+										"public",
+										"v2",
+										"comments",
+										":idComents"
+									],
+									"variable": [
+										{
+											"key": "idComents",
+											"value": "2030"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token_rest}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"if (pm.request.method == 'GET')",
+					"{",
+					"    pm.test(\"Uhull - Consulta realizada - [Sucess 200]\", function () {",
+					"    pm.response.to.have.status(200);",
+					"    })",
+					"}",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token_rest",
+			"value": "66f65ce8932766fa8d67e411941accadcfa58d8d62c6b7a8dfc34e21306f3d84",
+			"type": "string"
+		},
+		{
+			"key": "url_api_gorest",
+			"value": "https://gorest.co.in",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}

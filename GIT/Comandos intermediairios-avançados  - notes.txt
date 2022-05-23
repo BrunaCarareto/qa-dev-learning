@@ -1,0 +1,93 @@
+---------------------------------
+Comandos para controle de BRANCH
+---------------------------------
+
+* CONSULTAR *
+--------------	
+	git branch    			= Exibe uma lista de branch que temos em nosso repositório local
+	
+* CRIAR *
+----------
+> LOCAL
+	git branch NOME_DA_BRANCH 	= Comando para CRIAR uma nova branch
+	git checkout NOME_DA_BRANCH 	= Para ACESSAR a branch
+	git checkout -b NOME_DA_BRANCH  = Comando para CRIAR e ACESSAR a branch de uma unica vez
+
+> SERVIDOR
+	git push --set-upstream origin develop   	 = Nesse caso a branch DEVELOP será criada no repositório WEB a partir da branch ORIGIN
+	git push -u origin NOME_DA_BRANCH_A_CRIAR 	 = mesmo comando acima escrita de outra forma
+
+* REMOVER *
+------------
+> LOCAL
+	git branch -d NOME_DA_BRANCH   = Comando para REMOVER uma branch local
+	git branch -D NOME_DA_BRANCH   = Comand para FORÇAR a remoção de uma branch local
+
+> SERVIDOR	
+	git push --delete origin NOME_DA_BRANCH  = A branch é apagada direto no repositório WEB
+
+
+* RENOMEAR *
+------------
+	git branch -m NOVO_NOME 	   = Caso já esteja "logado na branch" que deseja renomear
+	git branch -m NOME_ATUAL NOME_NOVO = Caso não esteja na branch que deseja renomear
+
+---------------------------------
+Comandos para MERGE entre BRANCHS
+---------------------------------
+	Uma branch sempre se origina de outra principal.
+	O conceito de MERGE "une" o código de duas branchs diferentes.
+
+	Faça o checkout na branch que deseja atualizar (git checkout NOME_BRANCH)
+	git merge develop         =          Ao executar o comando, você está pegando as alterações da branch DEVELOP para a branch MASTER (que deseja atualizar)
+
+
+-----------------------------------------------------------------
+Comandos para utilizar ferramenta grafica para RESOLVER CONFLITOS
+------------------------------------------------------------------
+>> Baixar o programa KDIFF3
+
+>> Configurar o programa instalado no GIT
+	git config --global --add  merge.tool kdiff3  = Configurar no git para  que a ferramenta grafica utilizda no GIT seja KDIFF3
+	git config --global --add mergetool.kdiff3.path "Colocar o caminho de instalação do KDIFF3"
+	git config --global --add mergetool.kdiff3.trustExitCode false
+
+>> Executando
+	git mergetool  = Para executar a ferramenta gráfica
+	
+ATENÇÃO: Geralmente, plataformas de desenvolvimento (IDE) já possuem ferramentas internas que auxiliam os desenvolvedores a resolverem os conflitos 
+
+----------------------------
+SALVANDO MUDANÇA NA MEMORIA
+----------------------------
+	git stash    		= 	Comando pega as alterações realizadas na branch que ainda não foram comitadas e SALVA NA MEMÓRIA. Dessa forma caso queira mudar de branch durante o desenvolvimento as alterações não serão "carregadas para outra branch"
+	git stash list		= 	Lista todas as alterações salvas em memória	
+	
+	git stash apply		=	Pega a ultima alteração salva na memória e a carrega para branch atual
+	git stash pop		= 	Pega a ultima alteração salva na memória, a carrega para branch atual e a remove da listagem
+	git stash pop ID_STASH	=	Pega um STASH específico que está salvo na memória, o carrega para branch atual e a remove da listagem
+
+	git stash drop ID_STASH = 	Serve para apagar uma STASH especifica da listagem
+	git reset --hard	= 	Desfaz as alterações feitas
+
+----------
+GIT FETCH
+----------
+	O comando tem a responsabilidade de trazer alterações do servidor WEB para o repositório LOCAL.
+	Atenção: Ao fazer um PULL, automaticamente um FETCH é executado em conjunto com um MERGE, o que faz a alteração ser aplicada na branch local.
+	Ao executar um GIT FETCH caso os dados estejam corretos para aplicar de fato na branch local depois será necessário executar GIT MERGE.
+
+-----------
+GIT REBASE
+-----------
+	O comando permite alterar uma variedade de commits, modificando o histórico do repositório. 
+	É possível reordenar, editar ou combinar commits. (Utilizado para ter um histórico mais LINEAR no projeto)
+	(Pegar os commits de uma branch e aplicar de uma vez só em outra)
+	
+------
+ALIAS
+------
+	Comando utilizado para criar "atalhos" para respectivos comandos. Exemplo:
+	git config --global alias.s status       =    Nesse caso não será mais necessário digitar GIT STATUS apenas GIT S 
+	git config --global --unset alias.s  	 =    Comando para remover o "atalho" criado anteriormente para letra "S"
+	

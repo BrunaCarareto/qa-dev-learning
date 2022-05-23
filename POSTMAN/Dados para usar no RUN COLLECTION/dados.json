@@ -1,0 +1,38 @@
+[
+{
+	"name_user":"juzefina1",
+	"email_user":"juzefina1@yopmail.com",
+	"gender_user":"female",
+	"status_user":"active"
+},
+{
+	"name_user":"juzefina2",
+	"email_user":"juzefina2@yopmail.com",
+	"gender_user":"female",
+	"status_user":"active"
+},
+{
+	"name_user":"juzefina3",
+	"email_user":"juzefina3@yopmail.com",
+	"gender_user":"female",
+	"status_user":"active"
+},
+{
+	"name_user":"juzefina4",
+	"email_user":"juzefina4@yopmail.com",
+	"gender_user":"female",
+	"status_user":"active"
+},
+{
+	"name_user":"juzefina5",
+	"email_user":"juzefina5@yopmail.com",
+	"gender_user":"female",
+	"status_user":"active"
+},
+{
+	"name_user":"juzefina6",
+	"email_user":"juzefina6@yopmail.com",
+	"gender_user":"female",
+	"status_user":"active"
+}
+]

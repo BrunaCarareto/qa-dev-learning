@@ -1,0 +1,54 @@
+------------------------------
+CONFIGURAÇÃO AMBIENTE DE TESTE
+------------------------------
+
+DEPENDÊNCIAS
+-------------
+	Baixe o projeto   buger-eats-partner-ms e coloque na pasta QANinja dentro do C:
+	Dentro da pasta o projeto é subdivido em microserviços (api, mailer, web)
+	Abre um terminar de comando e acesse a pasta do projeto
+	
+Acesse todas as pastas (API, MAILER, WEB) e execute o comando
+	npm install          =           Comando vai baixar as dependencias do projeto
+Acesse o programa do VSCODE e inicie a pasta do projeto que está no C:
+
+
+BANCO DE DADOS
+--------------
+	Crie uma conta gratuita no (www.mongodb.com) (BANCO DE DADOS NOSQL)
+	Acesse a conta e faça a criação de um nova ORGANIZAÇÃO para os estudos, utilizando AWS FREE, crie novo banco de dados, crie o usuario e senha de acesso desejado e faça a liberação de acesso dos IPS
+	Após o ambiente estar criado, crie uma nova conexão por meio de aplicação.
+	Pegue a URL de conexão informada no MONGODB e coloque dentro do projeto no VSCODE (API > ENV > Substituir os dados entro de MONGO_URI)	
+
+	No caso, para testar o curso utilizaremos usuario (bugereats) senha (bugereats123)	
+
+	Atenção = Diferença entre banco de dados RELACIONAL e NÃO RELACIONAL (https://medium.com/qaninja/principais-diferen%C3%A7as-de-um-banco-de-dados-tradicional-e-o-mongodb-4fc1117453f8)
+
+SERVIDOR RABBITMQ
+-------------------
+	Utilizado para trabalhar com sistema de "messageria" na NUVEM
+	Sistema de gerenciamento de fila de eventos 
+	Acesse https://www.cloudamqp.com/  ou   https://customer.cloudamqp.com/signup
+	Acesse o RABBITMQ utilizando a conta do GITHUB, crie uma nova equipe para fazer o curso utilizando o pacote GRATUITO
+
+	Após criar o novo servidor para controle da "messageria" 
+	Pegue a URL de conexão informada no RABBITMQ e coloque dentro do projeto no VSCODE (API > ENV > Substituir os dados entro de AMPQ_URL e o mesmo local dentro da pasta MAILER)
+	
+SERVIDOR EMAIL
+--------------
+	Utilizado para gerenciar e enviar todos os emails do sistema na NUVEM em sandbox para ambientes de homologação
+	Acesse https://mailtrap.io/signin e faça o login utilizando o GIT HUB
+	Crie uma nova caixa INBOX com nome desejado
+	Após criar, abre a caixa em questão, escolha a linguagem de programação utilizada para pegar as configurações de acesso. Pegue os dados de HOST, PORT, USERNAME, PASSWORD e altere os parametros do arquivo ENV da pasta MAILER dentro do VS CODE.
+
+INICIANDO APLICAÇÃO  - HYPER
+-----------------------------
+	Acesse a pasta da API e execute o comando (npm install -g babel-cli)
+	Posteriormente, acesse cada uma das pastas (API, MAILER, WEB) e execute o comando (npm start) para iniciar a aplicação
+
+	Nesse momento todos os microserviçoes estarão iniciados.
+	Para ver o site acesse : (localhost:3000)
+
+
+
+	

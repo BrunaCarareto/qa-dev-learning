@@ -1,0 +1,82 @@
+Comandos básicos GIT/CMD
+--------------------------
+	cd      		= comando para entrar na pasta
+	dir    			= lista os aquivos presentes no diretório
+	dir -a  		= lista os arquivos OCULTOS presentes no diretório
+	clear   		= limpa as informações escritas na tela do terminal
+	git remote -v      	=       serve para listar a URL em que o repositório está utilizando
+	git branch | grep R1	= 	o comando GREP server como um filtro. No caso desse comando ele está pedindo para listar somente as branch que contem a informção "R1". Dei o exemplo com BRANCH para pode ser usado para outras informações como por exemplo TAGS,
+
+Configurando NOME E EMAIL
+---------------------------
+	git config --global user.name "Bruna Carareto"
+	git config --global user.email "bruna.carareto@wexinc.com"
+
+Para visualizar todas as configurações do git
+-----------------------------------------------
+	git config --list
+
+Acesse o caminho do projeto para CRIAR NOVO REPOSITORIO
+----------------------------------------------------------
+	git init 
+
+Selecionando quais arquivos deseja fazer "o controle de versões"
+----------------------------------------------------------------
+	git status                                                = vai exibir quais arquivos estão ou não rastreáveis o status de cada um
+	git add nomedoarquivo.txt                                 = o arquivo selecionado passa a ser rastreado
+	git add --all    OU     git add -A    OU    git add .     = vai colocar todos os arquivos presentes na pasta para o rastreamento
+
+Manipulando os arquivos dentro do repositório
+----------------------------------------------
+	git commit -m "mensagme a ser exibida para o respectivo commit"    =  vai salvar localmente uma nova versão do aquivo no GIT.
+	git commit                                                         =  mesma função acima porém sem mensagem definida
+	git reset --hard HEAD~1						   =  está pegando a branch principal e voltando "1" commit. A quantidade pode variar de acordo com a quantidade de comites citadas no parâmetro do comando (comando funciona apenas para ALTERAÇÃO LOCAL)
+
+	git diff                                   = Para ver a diferença entre os aquivos alterados antes de estarem "rastreados"
+	git diff --cached  OU    git diff --staged = Para ver a diferença dos arquivos já rastreados
+
+Para visualizar o historico de alterações
+-------------------------------------------
+Observação: Existem vários comandos para ver log de alterações (arquivo separado adicionado na pasta do curso). Os mais usados são:
+	git log              = mostra as modificações detalhadas (ID SHA, nome autor, data, descriação do commit)
+	git log --oneline    =  mostra as modificações resumidamente (em apenas uma linha)
+	
+	
+Utilizando um determinado registro do historico de alterações
+-------------------------------------------------------------
+	git log
+	git checkout COLOCAR O NUMERO DO SHA DO COMMIT DESEJADO (não precisa colocar o numero todo apenas os 6 primeiros caracteres)
+	git checkout COLOCAR O NOME DA BRANCH DESEJADA 
+	
+Comando para desfazer uma alteração antes de COMMITAR
+-------------------------------------------------------
+	git checkout nome do arquivo.txt      =   sistema desfaz as alterações feitas no arquivo RASTREADO NÃO COMITADO
+	git reset --hard                      =   sistema desfaz TODAS AS ALTERAÇÕES feitas na pasta do projeto RASTREADOS NÃO COMITADO
+	git clean -f                          =   força a remoção de arquivos NÃO RASTREADOS criados no projeto
+
+
+ATENÇÃO
+--------
+	Arquivos com extenção .GITIGNORE são arquivos que o usuário não deseja fazer o versionamento.
+O ideal é ter apenas um aquivo .GITIGNORE dentro da pasta do produto e dentro desse arquivo, parametrizar (colocar o nome ou extensões) de todos os aquivos que você NÃO DESEJA VERSIONAR.
+	Existe um repositorio que contem vários aquivos de .Gitignore de linguagens diferentes (https://github.com/github/gitignore)
+
+
+Selecione o caminho de pasta desejado para fazer o CLONE DO PROJETO LOCAL
+---------------------------------------------------------------------------
+	git clone  nomedoprojeto/ nome_da_pasta_para_onde_quer_clonar    exemplo:     git clone gitcourse/ testegit
+
+Selecione o caminho de destino para fazer o CLONE DO PROJETO QUE ESTÁ NO REPOSITORIO SERVIDOR GIT
+--------------------------------------------------------------------------------------------------
+	git clone  colocar_o_nome_da_url_online
+
+ATENÇÃO: A função de CLONE de um projeto faz uma cópia completa de todo projeto que está em um SERVIDOR para seu AMBIENTE LOCAL, inclusive o histórico de alterações
+
+
+
+
+
+
+
+   
+

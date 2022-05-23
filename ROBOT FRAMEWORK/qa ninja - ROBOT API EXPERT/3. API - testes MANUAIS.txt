@@ -1,0 +1,23 @@
+----------------
+TESTANDO A API
+----------------
+Utilizaremos o software (INSOMINA) https://insomnia.rest/download - também poderia ser usado POSTMAN
+
+--------
+METODOS
+--------	
+	POST => ENVIA informações em JSON para o servidor a nivel de INSERÇÃO. Quando um formulário de cadastro é preenchido no frontend, a API utiliza o POST para enviar os dados preenchidos;
+	GET => PEGA informações do servidor. (Todas as informações salvas no banco de dados podem ser acessadas para exibir na tela uma datatable ou um relatório para o usuário);
+	DELETE => Solicita exclusões ao servidor. (Por meio de parâmetros podemos passar por exemplo o ID do parceiro que desejamos remover para API executar o método do DELETE, removendo o respectivo registro do banco de dados);
+	PUT = ENVIA informações a nivel de atualização de registros já existentes.
+	
+-------------------
+CODIGOS DE RETORNO
+-------------------
+	Para mais detalhes acessar: https://httpstatusdogs.com/    ou    https://restfulapi.net/http-status-codes/
+
+	1xx -> Mensagens informativas.
+	2xx -> Mensagens de sucesso.
+	3xx -> Mensagens de redirecionamento (precisa de mais informação para concluir a solicitação)
+	4xx -> Mensagens de erro "cliente"
+	5xx -> Mensagens de erro "servidor"

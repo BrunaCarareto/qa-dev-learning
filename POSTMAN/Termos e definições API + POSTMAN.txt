@@ -1,0 +1,117 @@
+--------
+POSTMAN
+--------
+	Ferramenta criada em 2012 para comunicar e fazer testes nos endpoinsts criados dentros das APIs por meio de requisições HTTP, REST e SOAP.
+         CLIENT ----------> envia REQUEST para API
+         CLIENT <---------- a API devolve o RESPONSE 
+
+	POSTMAN permite a criação de SCRIPTS utilizando NOTE.JS / JAVA SCRIPT. Seguindo essa linha de execução:
+	REQUEST (pre-request script) --> REQUEST --> RESPONSE --> REQUEST (test script)
+	COLLECTION (pre-request script) --> FOLDER (pre-request script) --> REQUEST (pre-request-scripts) --> REQUEST --> RESPONSE --> COLLECTION (test script) --> FOLDER (test script) --> REQUEST (test script)
+
+	DEFINIÇÕES
+	----------
+		REQUEST  = O que enviamos na requisição para API
+		RESPONSE = O que recebemos de resposta da API
+
+	Link acesso tutorial postman	
+	----------------------------
+		https://learning.postman.com/docs/writing-scripts/script-references/test-examples/#parsing-response-body-data
+
+	GERENCIANDO AMBIENTES
+	---------------------
+		* GLOBAL  : Visível em todo o workspace											pm.globals.set("variable_ke", "variable_values);
+		* COLEÇÕES: Visível em todos requests de uma coleção									pm.collectionVariables.set("variable_ke", "variable_values);
+		* AMBIENTE: Permite fazer o chaveamento entre ambientes (sobrescreve uma variavel de coleção)				pm.environment.set("variable_ke", "variable_values);
+		* LOCAL   : Variável temporária, visível apenas na requisição a qual foi criada (sobrescreve todas as anteriores)	pm.variables.set("variable_ke", "variable_values);
+		* DADOS   : Fornecidas de fontes externas, como CSV e JSON
+
+	COMANDOS MAIS USADOS PARA SCRIPT PRÉ REQUISIÇÃO
+	------------------------------------------------
+		pm 		  = Objeto que guarda informação request/response
+		pm.info 	  = Fonece informação sobre o script executado como (nome, id...)
+		pm.variables, pm.environment, pm.collectionVariables, pmglobais = Fornece acesso a variáveis (get/set)
+		pm.response 	  = Pega informação do response
+		pm.test 	  = Cria scripts de teste
+		pm.expect 	  = Cria asserts para scripts de teste (para fazer validações)
+		pm.response.to.be = Asserts pré definidos para teste (para fazer validações)
+		pm.iterationData  = Ao executar uma coleção utilizando arquivos de dados, esse comando deve ser usado para fazer o "link" entre as colunas do arquivo com as "dictiorarys keys" presentes no request body
+
+	EXECUTANDO COLEÇÃO VIA LINHA COMANDO
+	------------------------------------
+		Para isso, utilizaremos o NEWMAN CLI, que, pode ser integrado com servidores de integração contínua. 
+		Precisa utilização, será necessário ter o NODE.JS instalado, e, será possivel gerar reports em HTML.
+           *INSTALAÇÃO:     
+		Comandos para fazer instalação do NEWMAN 				 = npm install -g newman
+		Comandos para fazer a instalação do módulo de geração de reports em HTML = npm install -g newman-reporter-html
+		Comandos para verificar a versão do NEWMAN após intalação		 = newman -v
+		Comando para instalação de módulo de geração que possibilitem customização	=	npm install -g newman-reporter-htmlextra
+
+	   *EXECUTAR COLEÇÕES: 	
+		Comandos para executar uma coleção em JSON			= newman run {{caminho_colecao.json}}					-> Ex: newman run Go_Rest_API_postman_colletion.json
+		Comandos para executar uma coleção com ambiente em JSON		= newman run {{caminho_colecao.json}} -e {{caminho_environments.json}}  -> Ex: newman run Go_Rest_API_postman_colletion.json -e Postman_environments.json
+		Comandos para executar correção via URL				= newman run {{url_da_colecao}}
+		Comandos para executar coleção via arquivo de variáveis		= newman run colecao_postman.json -e testEnv.json
+		Comandos para gerar report HTML com o Newman HTML Reporter Extra	=	newman run nome_da_colecao -r htmlextra
+		Comanod para gerar report HTML EXTRA	=	newman run Go_Rest_API_postman_collection.json -e Postman_enviroments.json -r htmlextra
+
+	   *PARÂMETROS OPCIONAIS:
+		-h				= Abre o menu de ajuda
+		--folder nome_da_pasta		= Executa uma pasta específica de uma coleção          -> Ex: newman run Go_Rest_API_postman_colletion.json --folder Posts
+		-e nome_do_arquivo_ambiente	= Especifica um arquivo de variáveis de ambiente JSON  -> Ex: newman run Go_Rest_API_postman_colletion.json -e Postman_environments.json
+		-d nome_do_arquivo.csv ou .json	= Especifica um arquivo de dados (JSON ou CSV)         -> Ex: newman run Go_Rest_API_postman_colletion.json -d dados.json
+		-n qtde_integrações		= Informa o número de iterações a serem executadas     -> Ex: newman run Go_Rest_API_postman_colletion.json -n 10
+		--delay-request numero_ms 	= Especifica um delay de execução entre requisições    -> Ex: newman run --delay-request 5000 Go_Rest_API_postman_colletion.json
+		--bail				= Para a execução se um teste falhar		       -> Ex: newman run Go_Rest_API_postman_colletion.json --bail
+		--vrbose			= Mostra detalhes da execução de cada request	       -> Ex: newman run Go_Rest_API_postman_colletion.json --verbose
+		--silent			= Oculta output da execução (não mostra nada)	       -> Ex: newman run Go_Rest_API_postman_colletion.json --silent
+		newman run nome_colecao_executar -r html	= Gerar report HTML no template padrão na pasta padrão do newman (C:/user/user/newman)
+		newman run nome_colecao_executar --reporters cli,html -- reporter-html-template caminho_template --reporter-html-export 
+report_exportado.html	= Para criar um report baseado em um template
+		Acesse a pasta dos arquivos exportados e execute o comando a seguir para exutar o relatório no layout padrão	  =	newman run Go_Rest_API_postman_collection.json -e Postman_environments.json -r html
+		Para visualizar arquivo HTML com layout de exportação pré-definidos execute	=	newman run Go_Rest_API_postman_collection.json -e Postman_environments.json --reporters cli,html --reporter-html-template customHtml.hbs --reporter-html-export newman/template1.html
+
+	CI COM POSTMAN (API)
+	---------------------
+	Integração contínua (CI) é uma pratica que visa integrar o processo de BUILD DE CODIGO e TESTES AUTOMATIZADOS
+	Reduz o trabalho manual no processo integração
+	Garante que a solução esteja funcionando após cada atualização (testes de regressão)
+	Os testes são executados automaticamente a cada COMMIT realizado pelo desenvolvimento sem precisar de uma intervenção de QA
+
+		GERANDO API KEY
+		----------------
+			Para fazer integrações CI, precisamos gerar uma API KEY da coleção, seguindo os passos:
+			Acesse o SITE do POSTMAN > FAÇA LOGIN > ACCOUNT SETTINGS > API KEYS > GENERATE API KEY > De um nome para identificar a coleção e clique em GERAR
+			
+			Links de acesso as coleções
+			https://api.getpostman.com/collections?apikey=$apiKey        --> Para listar coleções
+			https://api.getpostman.com/collections/$uid?apikey=$apiKey   --> Para pegar coleção pelo UID
+			https://api.getpostman.com/environments?apikey=$apiKey	     --> Para obter URL do ambiente
+	
+	Executar comando no NEWMAN
+		newman run https://api.getpostman.com/collections?apikey=$apiKey --environment https://api.getpostman.com/environments?apikey=$apiKey
+	Os links devidamente preenchidos então disponiveis na pasta do curso
+		
+----
+API
+----
+	Application programming Interface. (Resumidamente o coração da aplicação) onde as regras de negocio são inseridas, interface de comunicação 
+
+	REQUISIÇÕES MAIS USADAS
+	------------------------
+		GET 	  = Para listar informações pré-cadastradas (já existentes)
+		POST 	  = Para inserir novos registros 
+		PATCH/PUT = Para atualizar um registro pré-cadastrado (já existentes)
+		DELETE 	  = Para remover registros pré-cadastrados (já existentes)
+
+	TIPOS DE AUTORIZAÇÃO
+	---------------------
+		* INHERITING AUTH: Herda configurações de autorização da coleção
+		* NO AUTH        : Não será enviado nenhuma informação de autorização pelo postman
+		* API KEY	 : Informa a chave da API e o valor para autenticação dos requests
+		* BASIC AUTH	 : Autenticação básica de usuário e senha
+		* BEARER TOKEN	 : Garante permissão para as requisições através de uma chave de acesso
+
+
+
+

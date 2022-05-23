@@ -1,0 +1,2018 @@
+{
+	"info": {
+		"_postman_id": "fd262a09-3bae-4df3-aae3-b0ee7d6be413",
+		"name": "Hunter API",
+		"description": "### Documentação de testes (**HUNTER API)**\n\nURL API disponível em: [https://api.hunter.io/v2/](https://api.hunter.io/v2/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20978329"
+	},
+	"item": [
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "Criando leads",
+					"item": [
+						{
+							"name": "POST - Criando Lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.request.method == 'POST')\r",
+											"{\r",
+											"    //resposta sucesso\r",
+											"    pm.test(\"Uhull - Cadastro lead realizado [Success 200,201,202]\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201,202])\r",
+											"    });\r",
+											"\r",
+											"    //resposta sucesso - mensagem contem OK\r",
+											"    pm.test(\"Uhull - Código de resposta retornou - (Created)\", function () {\r",
+											"    pm.response.to.have.status(\"Created\")\r",
+											"    });\r",
+											"\r",
+											"    //resposta sucesso - tempo de execução\r",
+											"    pm.test(\"Uhull - Tempo de resposta inferior a 2 segundos\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"    });\r",
+											"};\r",
+											"\r",
+											"//armazenando ID do LEAD criado para utiliza-lo no endpoint de EXCLUSÃO\r",
+											"    pm.collectionVariables.set(\"id_lead\", pm.response.json().data.id);\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"{{$randomEmail}}\",\r\n  \"first_name\": \"{{$randomFirstName}}\",\r\n  \"last_name\": \"{{$randomLastName}}\",\r\n  \"position\": \"{{$randomJobArea}}\",\r\n  \"company\": \"{{$randomCompanyName}}\",\r\n  \"company_industry\": \"{{$randomCompanySuffix}}\",\r\n    \"company_size\": \"201-500 employees\",\r\n  \"confidence_score\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "POST - Criando Lead",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"Elenora.Brekke@yahoo.com\",\r\n  \"first_name\": \"Wade\",\r\n  \"last_name\": \"Runolfsson\",\r\n  \"position\": \"Web\",\r\n  \"company\": \"Krajcik LLC\",\r\n  \"company_industry\": \"and Sons\",\r\n    \"company_size\": \"201-500 employees\",\r\n  \"confidence_score\": 100\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.hunter.io/v2//leads",
+											"protocol": "https",
+											"host": [
+												"api",
+												"hunter",
+												"io"
+											],
+											"path": [
+												"v2",
+												"",
+												"leads"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:20:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "location",
+											"value": "https://api.hunter.io/v2/leads/95789164"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"f241d5fbad3357d80c694aff41f21a6e\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "x-request-id",
+											"value": "00e54d32-adc7-40f6-bbf2-509f7f1391cc"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.257921"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa503e0ed0a5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 95789164,\n        \"email\": \"catalina_adams@hotmail.com\",\n        \"first_name\": \"Jeramie\",\n        \"last_name\": \"VonRueden\",\n        \"position\": \"Assurance\",\n        \"company\": \"Leannon, Thompson and Mosciski\",\n        \"company_industry\": \"Inc\",\n        \"confidence_score\": 100,\n        \"website\": null,\n        \"country_code\": null,\n        \"company_size\": \"201-500 employees\",\n        \"source\": null,\n        \"linkedin_url\": null,\n        \"phone_number\": null,\n        \"twitter\": null,\n        \"sync_status\": null,\n        \"notes\": null,\n        \"sending_status\": null,\n        \"last_activity_at\": null,\n        \"last_contacted_at\": null,\n        \"verification\": {\n            \"date\": null,\n            \"status\": null\n        },\n        \"leads_list\": {\n            \"id\": 3551404,\n            \"name\": \"Lista de leads == Corine.Olson29\",\n            \"leads_count\": 0\n        },\n        \"created_at\": \"2022-05-23 02:20:37 UTC\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "POST - Criando Lead [error required fileld]",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"//resposta erro - campos obrigatórios não foram preenchidos\r",
+											"    pm.test(\"Ops - Dados obrigatórios não foram preenchidos [Error 422]\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"empty_required_field\")\r",
+											"    });\r",
+											"\r",
+											"//resposta erro - mensagem contem  Unprocessable Entity\r",
+											"    pm.test(\"Ops - Código de resposta retornou - ( Unprocessable Entity)\", function () {\r",
+											"    pm.response.to.have.status(\"Unprocessable Entity\")\r",
+											"    });\r",
+											"\r",
+											"   "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \" \",\r\n  \"first_name\": \" \",\r\n  \"last_name\": \"{{$randomLastName}}\",\r\n  \"position\": \"{{$randomJobArea}}\",\r\n  \"company\": \"{{$randomCompanyName}}\",\r\n  \"company_industry\": \"{{$randomCompanySuffix}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "POST - Criando Lead [error required fileld]",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \" \",\r\n  \"first_name\": \" \",\r\n  \"last_name\": \"Schamberger\",\r\n  \"position\": \"Assurance\",\r\n  \"company\": \"Leuschke Group\",\r\n  \"company_industry\": \"Inc\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.hunter.io/v2//leads",
+											"protocol": "https",
+											"host": [
+												"api",
+												"hunter",
+												"io"
+											],
+											"path": [
+												"v2",
+												"",
+												"leads"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:21:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-request-id",
+											"value": "73f193a9-4709-4277-8d31-25ac6ba4b349"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.045661"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa50d6aae2a5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"empty_required_field\",\n            \"code\": 422,\n            \"details\": \"The email address is required.\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "# POST\n\nCriando novos leads  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 200, 201 ou 202`\n\n`String 'Created' no status code do response`\n\n`Tempo de execução < 2 seg`\n\n### Retornos esperados (ERROS)\n\n`Status code: 422`\n\nStartFragment\n\n`String 'empty required field' no status code do response`\n\nEndFragmen"
+				},
+				{
+					"name": "Atualizando leads",
+					"item": [
+						{
+							"name": "PUT - Atualizando Lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Bruna testes {{$randomFirstName}}\",\r\n  \"last_name\": \"Sobrenome testes {{$randomLastName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads/:id",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "95786157"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "PUT - Atualizando Lead",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"first_name\": \"Bruna testes Johnson\",\r\n  \"last_name\": \"Sobrenome testes Raynor\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.hunter.io/v2//leads/:id",
+											"protocol": "https",
+											"host": [
+												"api",
+												"hunter",
+												"io"
+											],
+											"path": [
+												"v2",
+												"",
+												"leads",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "95786157"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:21:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5dcb9b64-854a-43ff-95dd-d3e47fa8bf6d"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.212125"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa51218eb9a5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"description": "# PUT\n\nAtualizando leads já existentes  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 204`\n\n`String 'No Content' no status code do response`"
+				},
+				{
+					"name": "Excluindo leads",
+					"item": [
+						{
+							"name": "DELETE - Remover lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Bruna testes {{$randomFirstName}}\",\r\n  \"last_name\": \"Sobrenome testes {{$randomLastName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads/{{id_lead}}",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads",
+										"{{id_lead}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "DELETE - Remover lead",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"first_name\": \"Bruna testes {{$randomFirstName}}\",\r\n  \"last_name\": \"Sobrenome testes {{$randomLastName}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_api_hunter}}/leads/{{id_lead}}",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads",
+												"{{id_lead}}"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:22:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-request-id",
+											"value": "ad8d1d48-3593-4678-b121-e00b2b8a2d3d"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.137580"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa52ec3eada5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"description": "# DELETE\n\nRemovendo leads já existentes  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 204`\n\n`String 'No Content' no status code do response`"
+				},
+				{
+					"name": "Consultando leads",
+					"item": [
+						{
+							"name": "GET - Lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_hunter}}/leads",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GET - Lead",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_api_hunter}}/leads",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:22:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"e73d9214f4d44788d7810472d6570494\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "x-request-id",
+											"value": "47bd74e7-d9cc-49fa-8855-21f6cc4027ed"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.160185"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa53427a5ca5e3-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"leads\": [\n            {\n                \"id\": 95789024,\n                \"email\": \"kyra59@yahoo.com\",\n                \"first_name\": \"Rosie\",\n                \"last_name\": \"Wiza\",\n                \"position\": \"Response\",\n                \"company\": \"Cole and Sons\",\n                \"company_industry\": \"and Sons\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551399,\n                    \"name\": \"Lista de leads == Jamarcus_Erdman\",\n                    \"leads_count\": 1\n                },\n                \"created_at\": \"2022-05-23 01:57:39 UTC\"\n            },\n            {\n                \"id\": 95788438,\n                \"email\": \"garry23@yahoo.com\",\n                \"first_name\": \"Margarita\",\n                \"last_name\": \"Douglas\",\n                \"position\": \"Factors\",\n                \"company\": \"Beahan Inc\",\n                \"company_industry\": \"LLC\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551395,\n                    \"name\": \"Lista de leads == Taryn48\",\n                    \"leads_count\": 1\n                },\n                \"created_at\": \"2022-05-23 01:50:55 UTC\"\n            },\n            {\n                \"id\": 95788154,\n                \"email\": \"jorge.nienow@yahoo.com\",\n                \"first_name\": \"Sadye\",\n                \"last_name\": \"Bernhard\",\n                \"position\": \"Response\",\n                \"company\": \"Crona Inc\",\n                \"company_industry\": \"and Sons\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551390,\n                    \"name\": \"Lista de leads == Oceane56\",\n                    \"leads_count\": 1\n                },\n                \"created_at\": \"2022-05-23 01:48:15 UTC\"\n            },\n            {\n                \"id\": 95786492,\n                \"email\": \"virgil93@hotmail.com\",\n                \"first_name\": \"Lavada\",\n                \"last_name\": \"Ledner\",\n                \"position\": \"Group\",\n                \"company\": \"Rogahn - Cummings\",\n                \"company_industry\": \"LLC\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551368,\n                    \"name\": \"Lista de leads == Lafayette_Veum68\",\n                    \"leads_count\": 2\n                },\n                \"created_at\": \"2022-05-23 01:35:35 UTC\"\n            },\n            {\n                \"id\": 95786490,\n                \"email\": \"elise.douglas@yahoo.com\",\n                \"first_name\": \"Orion\",\n                \"last_name\": \"Okuneva\",\n                \"position\": \"Security\",\n                \"company\": \"Farrell - Pacocha\",\n                \"company_industry\": \"LLC\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551368,\n                    \"name\": \"Lista de leads == Lafayette_Veum68\",\n                    \"leads_count\": 2\n                },\n                \"created_at\": \"2022-05-23 01:32:16 UTC\"\n            },\n            {\n                \"id\": 95786486,\n                \"email\": \"lottie_tremblay@gmail.com\",\n                \"first_name\": \"Carmela\",\n                \"last_name\": \"Muller\",\n                \"position\": \"Program\",\n                \"company\": \"Tillman - Treutel\",\n                \"company_industry\": \"LLC\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551367,\n                    \"name\": \"Lista de leads == Jean_Oberbrunner\",\n                    \"leads_count\": 1\n                },\n                \"created_at\": \"2022-05-23 01:19:11 UTC\"\n            },\n            {\n                \"id\": 95786483,\n                \"email\": \"parker68@hotmail.com\",\n                \"first_name\": \"King\",\n                \"last_name\": \"Johnson\",\n                \"position\": \"Solutions\",\n                \"company\": \"Thiel LLC\",\n                \"company_industry\": \"Group\",\n                \"confidence_score\": 100,\n                \"website\": null,\n                \"country_code\": null,\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551364,\n                    \"name\": \"Lista de leads == Maryam.Witting12\",\n                    \"leads_count\": 1\n                },\n                \"created_at\": \"2022-05-23 01:16:38 UTC\"\n            },\n            {\n                \"id\": 95786157,\n                \"email\": \"brunateste1@reddit.com\",\n                \"first_name\": \"Bruna testes Cortez\",\n                \"last_name\": \"Sobrenome testes Hackett\",\n                \"position\": \"Cofounder\",\n                \"company\": \"Reddit\",\n                \"company_industry\": \"Internet and Telecom\",\n                \"confidence_score\": 97,\n                \"website\": \"reddit.com\",\n                \"country_code\": \"US\",\n                \"company_size\": \"201-500 employees\",\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3551219,\n                    \"name\": \"Bruna 's leads ATUALIZADO n\",\n                    \"leads_count\": 1\n                },\n                \"created_at\": \"2022-05-22 21:32:40 UTC\"\n            }\n        ]\n    },\n    \"meta\": {\n        \"count\": 8,\n        \"total\": 8,\n        \"params\": {\n            \"limit\": 20,\n            \"offset\": 0\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "GET - Lead específico",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_hunter}}/leads/:id",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "95786157"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GET - Lead específico",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_api_hunter}}/leads/:id",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "95786157"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:22:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"2e20634d576afe5f50ee526990500ea1\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "x-request-id",
+											"value": "49f9f0de-1d2a-430e-b8b1-e75420e615c9"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.059713"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa536f6adfa5e3-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 95786157,\n        \"email\": \"brunateste1@reddit.com\",\n        \"first_name\": \"Bruna testes Cortez\",\n        \"last_name\": \"Sobrenome testes Hackett\",\n        \"position\": \"Cofounder\",\n        \"company\": \"Reddit\",\n        \"company_industry\": \"Internet and Telecom\",\n        \"confidence_score\": 97,\n        \"website\": \"reddit.com\",\n        \"country_code\": \"US\",\n        \"company_size\": \"201-500 employees\",\n        \"source\": null,\n        \"linkedin_url\": null,\n        \"phone_number\": null,\n        \"twitter\": null,\n        \"sync_status\": null,\n        \"notes\": null,\n        \"sending_status\": null,\n        \"last_activity_at\": null,\n        \"last_contacted_at\": null,\n        \"verification\": {\n            \"date\": null,\n            \"status\": null\n        },\n        \"leads_list\": {\n            \"id\": 3551219,\n            \"name\": \"Bruna 's leads ATUALIZADO n\",\n            \"leads_count\": 1\n        },\n        \"created_at\": \"2022-05-22 21:32:40 UTC\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "# GET\n\nConsultando leads existentes  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 200`\n\n`String 'OK' no status code do response`\n\n`Tempo de execução < 2 seg`"
+				}
+			],
+			"description": "## **Leads**\n\nValidações de testes criados para verificar endpoints POST, PUT, DELETE, GET",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Leads List",
+			"item": [
+				{
+					"name": "Criando leads list",
+					"item": [
+						{
+							"name": "POST - Criando Lead list",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"//armazenando ID do LEAD LIST criado para utiliza-lo no endpoint de EXCLUSÃO\r",
+											"pm.collectionVariables.set(\"id_lead_list\", pm.response.json().data.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Lista de leads == {{$randomUserName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads_lists",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads_lists"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "POST - Criando Lead list",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"Lista de leads == {{$randomUserName}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_api_hunter}}/leads_lists",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads_lists"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:23:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "location",
+											"value": "https://api.hunter.io/v2/leads_lists/3551444"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"3f2b52842e1b6ed47687e94614535b14\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "x-request-id",
+											"value": "4523ce97-996c-40b3-9f45-0584068db16e"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.115036"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa53d8df66a5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 3551444,\n        \"name\": \"Lista de leads == Noelia.Hilll\",\n        \"leads_count\": 0,\n        \"created_at\": \"2022-05-23 02:23:05 UTC\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "# POST\n\nCriando novos leads list  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads_lists\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 200, 201 ou 202`\n\n`String 'Created' no status code do response`\n\n`Tempo de execução < 2 seg`"
+				},
+				{
+					"name": "PUT - Atualizando lead list",
+					"item": [
+						{
+							"name": "POST - Criando Lead list Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Bruna 's leads ATUALIZADO {{$randomAlphaNumeric}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads_lists/:id",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads_lists",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3551219"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "POST - Criando Lead list Copy",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"Bruna 's leads ATUALIZADO {{$randomAlphaNumeric}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_api_hunter}}/leads_lists/:id",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads_lists",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3551219"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:23:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-request-id",
+											"value": "ce7ffb41-fd65-4474-aad2-3e93d42b5d79"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.096899"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa54144b93a5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"description": "# PUT\n\nAtualizando leads list já existentes  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads_lists\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 204`\n\n`String 'No Content' no status code do response`"
+				},
+				{
+					"name": "Excluindo lead list",
+					"item": [
+						{
+							"name": "DELETE - Remover lead list",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Bruna testes {{$randomFirstName}}\",\r\n  \"last_name\": \"Sobrenome testes {{$randomLastName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_api_hunter}}/leads_lists/{{id_lead_list}}",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads_lists",
+										"{{id_lead_list}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "DELETE - Remover lead list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"first_name\": \"Bruna testes {{$randomFirstName}}\",\r\n  \"last_name\": \"Sobrenome testes {{$randomLastName}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_api_hunter}}/leads_lists/{{id_lead_list}}",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads_lists",
+												"{{id_lead_list}}"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:23:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-request-id",
+											"value": "6aee46ef-6237-4f10-8c87-2e2d604a6167"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.250046"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa544cddfea5e3-GRU"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"description": "# DELETE\n\nRemovendo leads list já existentes  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads_lists\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 204`\n\n`String 'No Content' no status code do response`"
+				},
+				{
+					"name": "Consultando leads list",
+					"item": [
+						{
+							"name": "GET - Lead List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_hunter}}/leads_lists",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads_lists"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GET - Lead List",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_api_hunter}}/leads_lists",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads_lists"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:23:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"4fc7577636a0c73a08dc941fb43401e0\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "x-request-id",
+											"value": "d4556977-9e45-475b-8805-e1e80f423d51"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.051063"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa54848e7ca5e3-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"leads_lists\": [\n            {\n                \"id\": 3551404,\n                \"name\": \"Lista de leads == Corine.Olson29\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:57:48 UTC\"\n            },\n            {\n                \"id\": 3551399,\n                \"name\": \"Lista de leads == Jamarcus_Erdman\",\n                \"leads_count\": 1,\n                \"created_at\": \"2022-05-23 01:55:08 UTC\"\n            },\n            {\n                \"id\": 3551398,\n                \"name\": \"Lista de leads == Taya.Nitzsche\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:53:44 UTC\"\n            },\n            {\n                \"id\": 3551396,\n                \"name\": \"Lista de leads == Sherwood11\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:51:33 UTC\"\n            },\n            {\n                \"id\": 3551395,\n                \"name\": \"Lista de leads == Taryn48\",\n                \"leads_count\": 1,\n                \"created_at\": \"2022-05-23 01:50:36 UTC\"\n            },\n            {\n                \"id\": 3551392,\n                \"name\": \"Lista de leads == Reymundo29\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:48:28 UTC\"\n            },\n            {\n                \"id\": 3551390,\n                \"name\": \"Lista de leads == Oceane56\",\n                \"leads_count\": 1,\n                \"created_at\": \"2022-05-23 01:47:17 UTC\"\n            },\n            {\n                \"id\": 3551386,\n                \"name\": \"Lista de leads == Eleonore_Bergnaum\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:46:14 UTC\"\n            },\n            {\n                \"id\": 3551385,\n                \"name\": \"Lista de leads == Jedidiah_Wunsch\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:45:19 UTC\"\n            },\n            {\n                \"id\": 3551384,\n                \"name\": \"Lista de leads == Michaela_Stehr39\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:43:51 UTC\"\n            },\n            {\n                \"id\": 3551381,\n                \"name\": \"Lista de leads == Mossie.Dickens\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:41:28 UTC\"\n            },\n            {\n                \"id\": 3551379,\n                \"name\": \"Lista de leads == Norene_Hand56\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:40:22 UTC\"\n            },\n            {\n                \"id\": 3551368,\n                \"name\": \"Lista de leads == Lafayette_Veum68\",\n                \"leads_count\": 2,\n                \"created_at\": \"2022-05-23 01:19:13 UTC\"\n            },\n            {\n                \"id\": 3551367,\n                \"name\": \"Lista de leads == Jean_Oberbrunner\",\n                \"leads_count\": 1,\n                \"created_at\": \"2022-05-23 01:18:49 UTC\"\n            },\n            {\n                \"id\": 3551364,\n                \"name\": \"Lista de leads == Maryam.Witting12\",\n                \"leads_count\": 1,\n                \"created_at\": \"2022-05-23 01:16:31 UTC\"\n            },\n            {\n                \"id\": 3551354,\n                \"name\": \"Lista de leads == Gilda_Osinski75\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-23 01:06:27 UTC\"\n            },\n            {\n                \"id\": 3551280,\n                \"name\": \"Lista de leads Merle.Hodkiewicz\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-22 22:42:54 UTC\"\n            },\n            {\n                \"id\": 3551278,\n                \"name\": \"Minha primeira lista de leads\",\n                \"leads_count\": 0,\n                \"created_at\": \"2022-05-22 22:38:43 UTC\"\n            },\n            {\n                \"id\": 3551219,\n                \"name\": \"Bruna 's leads ATUALIZADO z\",\n                \"leads_count\": 1,\n                \"created_at\": \"2022-05-22 20:20:28 UTC\"\n            }\n        ]\n    },\n    \"meta\": {\n        \"total\": 19,\n        \"params\": {\n            \"limit\": 20,\n            \"offset\": 0\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "GET - Lead List específico",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_api_hunter}}/leads_lists/3551278",
+									"host": [
+										"{{url_api_hunter}}"
+									],
+									"path": [
+										"leads_lists",
+										"3551278"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GET - Lead List específico",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_api_hunter}}/leads_lists/3551278",
+											"host": [
+												"{{url_api_hunter}}"
+											],
+											"path": [
+												"leads_lists",
+												"3551278"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 23 May 2022 02:23:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "permissions-policy",
+											"value": "interest-cohort=()"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "GET, POST, PUT, DELETE, OPTIONS"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Email-Hunter-Origin"
+										},
+										{
+											"key": "x-user",
+											"value": "3243060"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"8c659897e6653029a4d3f94343600a70\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "x-request-id",
+											"value": "902d05de-0dd0-4e29-8820-29670c47179c"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.101130"
+										},
+										{
+											"key": "via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "70fa54b11f30a5e3-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 3551278,\n        \"name\": \"Minha primeira lista de leads\",\n        \"leads_count\": 0,\n        \"created_at\": \"2022-05-22 22:38:43 UTC\",\n        \"leads\": []\n    },\n    \"meta\": {\n        \"params\": {\n            \"limit\": 20,\n            \"offset\": 0,\n            \"leads_list_id\": 3551278\n        }\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "# GET\n\nConsultando leads lists existentes  \n[https://api.hunter.io/v2/](https://api.hunter.io/v2/)leads_lists\n\n### Retornos esperados (SUCESSO)\n\n`Status code: 200`\n\n`String 'OK' no status code do response`\n\n`Tempo de execução < 2 seg`"
+				}
+			],
+			"description": "## **Leads List**\n\nValidações de testes criados para verificar endpoints POST, PUT, DELETE, GET",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"if (pm.request.method == 'POST')",
+							"{",
+							"    //resposta sucesso",
+							"    pm.test(\"Uhull - Cadastro lead list realizado [Success 200,201,202]\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,202])",
+							"    })",
+							"",
+							"    //resposta sucesso - mensagem contem OK",
+							"    pm.test(\"Uhull - Código de resposta retornou - (Created)\", function () {",
+							"    pm.response.to.have.status(\"Created\")",
+							"    });",
+							"",
+							"    //resposta sucesso - tempo de execução",
+							"    pm.test(\"Uhull - Tempo de resposta inferior a 2 segundos\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"    });",
+							"};"
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "api_key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "594f1b7c9ed34674902e6602ef7e48de46aad3ba",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"if (pm.request.method == 'GET')",
+					"{",
+					"    //resposta sucesso",
+					"    pm.test(\"Uhull - Consulta funcionando - [Sucess 200]\", function () {",
+					"    pm.response.to.have.status(200);",
+					"    });",
+					"",
+					"    //resposta sucesso - mensagem contem OK",
+					"    pm.test(\"Uhull - Código de resposta retornou - (OK)\", function () {",
+					"    pm.response.to.have.status(\"OK\")",
+					"    });",
+					"",
+					"    //resposta sucesso - tempo de execução",
+					"    pm.test(\"Uhull - Tempo de resposta inferior a 2 segundos\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"    });",
+					"};",
+					"",
+					"/*------------------------------------------------------------------------*/",
+					"if (pm.request.method == 'PUT' || pm.request.method ==  'DELETE')",
+					"{",
+					"    //resposta sucesso - mensagem contem NO CONTENT",
+					"    pm.test(\"Uhull - Código de resposta retornou - (No Content)\", function () {",
+					"    pm.response.to.have.status(\"No Content\")",
+					"    });",
+					"}",
+					"",
+					"/*-------------------------------------------------------------------------*/",
+					"if (pm.request.method =='PUT')",
+					"{",
+					"    //resposta sucesso - registros atualizados",
+					"    pm.test(\"Uhull - Dados atualizados - [Sucess 204]\", function () {",
+					"    pm.response.to.have.status(204);",
+					"});",
+					"}",
+					"",
+					"/*--------------------------------------------------------------------------*/",
+					"if (pm.request.method =='DELETE')",
+					"{",
+					"    //resposta sucesso - registros removidos",
+					"    pm.test(\"Uhull - Dados removidos - [Sucess 204]\", function () {",
+					"    pm.response.to.have.status(204);",
+					"});",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_lead",
+			"value": " "
+		},
+		{
+			"key": "id_lead_list",
+			"value": " "
+		}
+	]
+}

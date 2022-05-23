@@ -1,0 +1,17 @@
+PRINCIPIOS DO SCRUM
+--------------------
+CONTROLE DE PROCESSOS EMPIRICOS
+AUTO ORGANIZAÇÃO
+COLABORAÇÃO
+PRIORIZAÇÃ ORIENTADA EM VALOR
+TIME-BOXING
+DESENVOLVIMENTO INTERATIVO
+
+RESUMO DOS PRINCIPIOS
+----------------------
+	CONTROLE DE PROCESSOS EMPIRICOS = Planejar o que será feito, seguindo os seguintes métodos: Transparencia, inspeção, adaptação. (visão do projeto, priorização do backlog, reuniões)
+	AUTO ORGANIZAÇÃO = Momento de converter os requisitos em backlog priorizado, momento de identificação do time, identificação das tarefas, divisão de tarefas, obter resultado ficando atento as necessidades do time
+	COLABORAÇÃO = Desenvolvimento do produto em conjunto para criar valor do projeto
+	PRIORIZAÇÃO ORDENADA POR VALOR = propor entrega contínua e antecipada do valor do negócio
+	TIME-BOXING = Gerenciamento de tempo e estimativa de tarefas. Proporciona velocidade ao time e menos sobrecarga
+	DESENVOLVIMENTO INTERATIVO = Repetição de um processo para atingir um objetivo. Mudanças pode ser incluidas no projeto

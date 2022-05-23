@@ -1,0 +1,32 @@
+----------------------------
+API QUE SERA USADA NO CURSO
+----------------------------
+https://simple-books-api.glitch.me
+
+--------------------
+ENDPOINTS PARA TESTE
+--------------------
+	GET /status
+	GET /books
+		Podemos utilizar parâmetros no filtro como TYPE and LIMIT (maximo 1 a 20)
+	GET /books/:bookId
+	GET /orders
+	GET /orders/:orderId
+	POST /orders
+		Utilizar request body contendo
+		{
+			book_Id: int,
+			customerName: "string"
+		}
+	PATCH /orders/:orderId
+		Utilizar request body contendo
+		{
+			customerName: "string"
+		}
+	DELETE /orders/:orderId
+	POST /api-clients/
+		Utilizar request body contendo para gerar o token de acesso para usar alguns endpoints
+		{
+			clientName: "string",
+			clientEmail: "string"
+		}
