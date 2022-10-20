@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.9 on win32)" generated="20221020 01:29:55.123" rpa="false" schemaversion="3">
+<suite id="s1" name="Desafio2 amazon testes BDD" source="C:\Cursos no GIT\qa-training\Notes UDEMY\ROBOT BASIC\WebTesting\desafio_02\Desafio2_amazon_testes_BDD.robot">
+<test id="s1-t1" name="Caso de teste 03 - Adicionar Produto no Carrinho" line="10">
+<kw name="Abrir o navegador" library="Desafio2_amazon_resources_BDD" type="SETUP">
+<doc>Essa keyword tem a funcionalidade de abrir o navegador para iniciar os testes</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221020 01:29:55.476" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20221020 01:29:55.476" endtime="20221020 01:29:57.259"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221020 01:29:57.259" endtime="20221020 01:29:57.399"/>
+</kw>
+<status status="PASS" starttime="20221020 01:29:55.476" endtime="20221020 01:29:57.399"/>
+</kw>
+<kw name="Dado que estou na home page do site Amazon.com.br" library="Desafio2_amazon_resources_BDD">
+<doc>Essa keyword tem a funcionalidade de acessar a home page da AMAZON
+e aguardar até o componente de PESQUISA ser exibido na tela</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221020 01:29:57.399" level="INFO">Opening url 'https://amazon.com.br/'</msg>
+<status status="PASS" starttime="20221020 01:29:57.399" endtime="20221020 01:30:06.386"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${barra_pesquisa}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:06.386" endtime="20221020 01:30:06.501"/>
+</kw>
+<status status="PASS" starttime="20221020 01:29:57.399" endtime="20221020 01:30:06.502"/>
+</kw>
+<kw name="Quando adicionar o produto Console Xbos Series S no carrinho" library="Desafio2_amazon_resources_BDD">
+<kw name="Digitar o nome do produto &quot;Console Xbox Series S&quot; no campo de pesquisa para filtrar" library="Desafio2_amazon_resources_BDD" sourcename="Digitar o nome do produto &quot;${nome_produto}&quot; no campo de pesquisa para filtrar">
+<doc>Essa keyword tem a funcionalidade de digitar o "nome de um produto" dentro da barra de pesquisas do site
+e clicar no botão PESQUISAR para filtrar</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${barra_pesquisa}</arg>
+<arg>text=${nome_produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:06.507" level="INFO">Typing text 'Console Xbox Series S' into text field '//input[@aria-label='Pesquisa']'.</msg>
+<status status="PASS" starttime="20221020 01:30:06.505" endtime="20221020 01:30:06.945"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${botao_pesquisa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:06.946" level="INFO">Clicking element '//input[@value='Ir']'.</msg>
+<status status="PASS" starttime="20221020 01:30:06.945" endtime="20221020 01:30:07.142"/>
+</kw>
+<kw name="Ordenar a pesquisa por média de avalições dos clientes" library="Desafio2_amazon_resources_BDD">
+<doc>Essa keyword tem a função escolher a ordem de exibição dos itens da pesquisa</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${botao_ordem_pesquisa}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:07.144" endtime="20221020 01:30:11.847"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${botao_ordem_pesquisa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:11.848" level="INFO">Clicking element 'a-autoid-0-announce'.</msg>
+<status status="PASS" starttime="20221020 01:30:11.847" endtime="20221020 01:30:11.946"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${ordem_media}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:11.946" endtime="20221020 01:30:12.022"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${ordem_media}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:12.022" level="INFO">Clicking element '//a[contains(.,'Méd. Avaliações de clientes')]'.</msg>
+<status status="PASS" starttime="20221020 01:30:12.022" endtime="20221020 01:30:12.163"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:07.143" endtime="20221020 01:30:12.164"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:06.504" endtime="20221020 01:30:12.164"/>
+</kw>
+<kw name="Então o produto &quot;Console Xbox Series S&quot; deve ser apresentado na página" library="Desafio2_amazon_resources_BDD" sourcename="Então o produto &quot;${lista_produto}&quot; deve ser apresentado na página">
+<doc>Essa keyword tem a funcionalidade verificar se o produto pesquisado está sendo exibido na consulta</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${foto_xbox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:12.166" endtime="20221020 01:30:13.492"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:12.165" endtime="20221020 01:30:13.492"/>
+</kw>
+<kw name="E o produto &quot;Console Xbox Series S&quot; deve ser &quot;adicionado&quot; no carrinho" library="Desafio2_amazon_resources_BDD" sourcename="E o produto &quot;${produto}&quot; deve ser &quot;${acao}&quot; no carrinho">
+<doc>Essa keyword tem a funcionalidade de ADICIONAR ou REMOVER um determinado "produto" do carrinho</doc>
+<if>
+<branch type="IF" condition="'${acao.upper()}'=='ADICIONADO'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${foto_xbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:13.496" level="INFO">Clicking element '//img[contains(@alt,'Console Xbox Series S')]'.</msg>
+<status status="PASS" starttime="20221020 01:30:13.495" endtime="20221020 01:30:18.758"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${botao_adicionar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:18.759" endtime="20221020 01:30:18.797"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${botao_adicionar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:18.798" level="INFO">Clicking element '//input[contains(@name,'submit.add-to-cart')]'.</msg>
+<status status="PASS" starttime="20221020 01:30:18.797" endtime="20221020 01:30:20.632"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${frase_adicionado}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:20.632" endtime="20221020 01:30:20.813"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:13.495" endtime="20221020 01:30:20.813"/>
+</branch>
+<branch type="ELSE IF" condition="'${acao.upper()}'=='REMOVIDO'">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${botao_remover}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20221020 01:30:20.813" endtime="20221020 01:30:20.813"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${botao_remover}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221020 01:30:20.813" endtime="20221020 01:30:20.813"/>
+</kw>
+<status status="NOT RUN" starttime="20221020 01:30:20.813" endtime="20221020 01:30:20.813"/>
+</branch>
+<status status="PASS" starttime="20221020 01:30:13.493" endtime="20221020 01:30:20.813"/>
+</if>
+<status status="PASS" starttime="20221020 01:30:13.492" endtime="20221020 01:30:20.814"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:06.503" endtime="20221020 01:30:20.814"/>
+</kw>
+<kw name="Então o produto &quot;Console Xbox Series S&quot; deve ser apresentado dentro do carrinho de compras" library="Desafio2_amazon_resources_BDD" sourcename="Então o produto &quot;${produto_carrinho}&quot; deve ser apresentado dentro do carrinho de compras">
+<doc>Essa keyword tem a funcionalidade de visualizar o produto dentro do carrinho de compras</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${botao_ir_carrinho}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221020 01:30:20.816" level="INFO">Clicking element '//span[@class='a-button a-spacing-top-base a-button-span12 a-button-base'][contains(.,'Ir para o carrinho')]'.</msg>
+<status status="PASS" starttime="20221020 01:30:20.815" endtime="20221020 01:30:25.228"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${frase_carrinho_compras}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:25.228" endtime="20221020 01:30:25.330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${item_carrinho}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221020 01:30:25.331" endtime="20221020 01:30:25.354"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:20.815" endtime="20221020 01:30:25.354"/>
+</kw>
+<kw name="Fechar o navegador" library="Desafio2_amazon_resources_BDD" type="TEARDOWN">
+<doc>Essa keyword tem a funcionalidade de fechar o navegador para encerrar os testes</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221020 01:30:25.554" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221020 01:30:25.371" endtime="20221020 01:30:25.554"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221020 01:30:25.554" endtime="20221020 01:30:28.103"/>
+</kw>
+<status status="PASS" starttime="20221020 01:30:25.369" endtime="20221020 01:30:28.103"/>
+</kw>
+<doc>Esse teste verifica a adição de um produto no carrinho de compras</doc>
+<tag>adicionar_carrinho</tag>
+<status status="PASS" starttime="20221020 01:29:55.476" endtime="20221020 01:30:28.103"/>
+</test>
+<doc>Essa suite tem como objetivo realizar os testes propostos no DESAFIO 2 do curso,
+Onde, os casos de teste 03 e 04 foram criados seguindo o padrão de BDD proposto</doc>
+<status status="PASS" starttime="20221020 01:29:55.123" endtime="20221020 01:30:28.103"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">adicionar_carrinho</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Desafio2 amazon testes BDD">Desafio2 amazon testes BDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
