@@ -1,0 +1,55 @@
+O QUE É ROBOT FRAMEWORK
+-------------------------
+	Framework para automação de testes desenvolvido em Python
+	Framework generico possivel testar qualquer sistema
+	Possui várias libraries já existentes que podem ser importadas
+	Possivel criar e executar testes em BDD sem precisar instalar puglin ou configuração extra, pois ele já tem essa função NATIVA
+	
+	
+PARA EXECUTAR MANUALMENTE OS TESTES
+------------------------------------
+	robot -d CaminhodaPastaparaSalvarLOG .\PastadoTesteRobot		**Para executar todas as suites da pasta
+	robot -d CaminhodaPastaparaSalvarLOG .\PastadoTeste\file.robot		**Para executar somente as suites de um arquivo
+	robot .\file.robot							**Caso ja esteja dentro da pasta onde o arquivo de teste está e não queira definir onde o log será salvo
+	robot -t "nome do teste que deseja executar" .\file.robot		**Caso ja esteja dentro da pasta onde o arquivo de teste está e queira executar o teste específico da suite sem definir onde o log será salvo
+	robot -i nomeDaTagQuedesejaExecutar  .\filerobot			**Caso ja esteja dentro da pasta onde o arquivo de teste está e queira executar todos os casos de teste que possuem uma determinada TAG
+	robot -e nomeDaTagQueNAOdesejaExecutar  .\filerobot			**Caso ja esteja dentro da pasta onde o arquivo de teste está e queira executar todos os testes QUE NÃO POSSUEM uma determinada TAG
+
+  
+SITES PARA CONSULTA
+--------------------
+	https://pypi.python.org/pypi
+	https://robotframework.org/
+	https://forum.robotframework.org/
+
+
+INSTALAÇÃO
+------------
+	Instale o PYTHON mais atual
+	Adicione a pasta de instalação do PYTHON nas variaveis de ambiente do seu computador
+	Instale o ROBOTFRAMEWORK pelo CMD usando o comando: pip install robotframework
+	Para atualizar o ROBOTFRAMEWORD pelo CMD udando o comando: pip install --upgrade robotframework
+	Para ver as libraries instaladas utilize o comando: pip freeze
+	Para instalar library de telas WEB e API REQUEST comandos:
+	pip install --upgrade robotframework-selenium2library
+	pip install -u robotframework-requests
+
+	Para fazer os testes utilizando o SELENIUM é necessário baixar os drivers dos navegadores (Antes de baixar o driver, lembre de verificar qual é a versão do seu respectivo navegador e baixe o driver compativel)
+	Os drivers do navegador devem ser colados dentro da pasta SCRIPTS existente dentro da pasta de instalação do PYTHON
+
+GHERKIN BDD
+------------
+	Seguindo a estrutura DADO, QUANDO, ENTÃO
+
+TIPOS DE VARIAVEIS
+------------------
+	SET GLOBAL VARIABLE = esse tipo de variavel pode ser utilizada em todas as suites do projeto
+	SET SUITE  VARIABLE = esse tipo de variavel pode ser utilizado somente na SUITE em questão
+	SET TEST   VARIABLE - esse tipo de variavel pode ser utilizado somente no caso de teste em que ela foi criada
+
+	${variavel_comum} TESTE    		 	-> essa é uma variavel simples
+ 		log ${variavel_comum}
+	@{variavel_lista} MORANGO BANANA MAÇA    	-> essa é uma lista (cada item vai ocupar uma determinado posição) de variavel
+		log ${variavel_lista[0]}
+	&{variavel_dicionario} nome=bruna  idade=10     -> essa é um dicionário (conjunto de dados) de variavel
+		log ${variavel_dicionario.nome}
