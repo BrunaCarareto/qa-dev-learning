@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.9 on win32)" generated="20221031 12:36:36.666" rpa="false" schemaversion="3">
+<suite id="s1" name="praticando LISTA" source="C:\Cursos no GIT\qa-training\Notes UDEMY\ROBOT BASIC\Variaveis\praticando_LISTA.robot">
+<test id="s1-t1" name="Meses do ano" line="8">
+<kw name="Exibir">
+<kw name="Log" library="BuiltIn">
+<arg>${meses[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.718" level="INFO">Janeiro</msg>
+<status status="PASS" starttime="20221031 12:36:36.716" endtime="20221031 12:36:36.718"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.720" level="INFO">Fevereiro</msg>
+<status status="PASS" starttime="20221031 12:36:36.719" endtime="20221031 12:36:36.720"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[2]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.722" level="INFO">Março</msg>
+<status status="PASS" starttime="20221031 12:36:36.720" endtime="20221031 12:36:36.722"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[3]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.724" level="INFO">Abril</msg>
+<status status="PASS" starttime="20221031 12:36:36.722" endtime="20221031 12:36:36.724"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[4]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.727" level="INFO">Maio</msg>
+<status status="PASS" starttime="20221031 12:36:36.724" endtime="20221031 12:36:36.727"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[5]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.728" level="INFO">Junho</msg>
+<status status="PASS" starttime="20221031 12:36:36.727" endtime="20221031 12:36:36.728"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[6]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.730" level="INFO">Julho</msg>
+<status status="PASS" starttime="20221031 12:36:36.728" endtime="20221031 12:36:36.730"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[7]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.731" level="INFO">Agosto</msg>
+<status status="PASS" starttime="20221031 12:36:36.730" endtime="20221031 12:36:36.731"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[8]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.732" level="INFO">Setembro</msg>
+<status status="PASS" starttime="20221031 12:36:36.731" endtime="20221031 12:36:36.732"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[9]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.733" level="INFO">Outubro</msg>
+<status status="PASS" starttime="20221031 12:36:36.732" endtime="20221031 12:36:36.733"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[10]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.734" level="INFO">Novembro</msg>
+<status status="PASS" starttime="20221031 12:36:36.733" endtime="20221031 12:36:36.734"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${meses[11]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 12:36:36.735" level="INFO">Dezembro</msg>
+<status status="PASS" starttime="20221031 12:36:36.734" endtime="20221031 12:36:36.735"/>
+</kw>
+<status status="PASS" starttime="20221031 12:36:36.715" endtime="20221031 12:36:36.735"/>
+</kw>
+<status status="PASS" starttime="20221031 12:36:36.714" endtime="20221031 12:36:36.736"/>
+</test>
+<doc>Praticando variáveis de LISTA</doc>
+<status status="PASS" starttime="20221031 12:36:36.666" endtime="20221031 12:36:36.740"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="praticando LISTA">praticando LISTA</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

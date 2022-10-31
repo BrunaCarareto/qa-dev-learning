@@ -30,7 +30,8 @@ Manipulando os arquivos dentro do repositório
 ----------------------------------------------
 	git commit -m "mensagme a ser exibida para o respectivo commit"    =  vai salvar localmente uma nova versão do aquivo no GIT.
 	git commit                                                         =  mesma função acima porém sem mensagem definida
-	git reset --hard HEAD~1						   =  está pegando a branch principal e voltando "1" commit. A quantidade pode variar de acordo com a quantidade de comites citadas no parâmetro do comando (comando funciona apenas para ALTERAÇÃO LOCAL)
+	git push							   =  para enviar para web/servidor os commits realizados.	
+git reset --hard HEAD~1						   =  está pegando a branch principal e voltando "1" commit. A quantidade pode variar de acordo com a quantidade de comites citadas no parâmetro do comando (comando funciona apenas para ALTERAÇÃO LOCAL)
 
 	git diff                                   = Para ver a diferença entre os aquivos alterados antes de estarem "rastreados"
 	git diff --cached  OU    git diff --staged = Para ver a diferença dos arquivos já rastreados

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.9 on win32)" generated="20221031 13:48:17.968" rpa="false" schemaversion="3">
+<suite id="s1" name="praticando ARGUMENTOS" source="C:\Cursos no GIT\qa-training\Notes UDEMY\Robot_Basic\Variaveis_Argumentos\praticando_ARGUMENTOS.robot">
+<test id="s1-t1" name="Novo email" line="9">
+<kw name="Criando email customizado para">
+<arg>bruna</arg>
+<arg>carareto</arg>
+<kw name="Generate Random String" library="String">
+<var>${palavra_aleatoria}</var>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20221031 13:48:18.017" level="INFO">${palavra_aleatoria} = pAKJ9I4e</msg>
+<status status="PASS" starttime="20221031 13:48:18.016" endtime="20221031 13:48:18.017"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>${nome}${sobrenome}${palavra_aleatoria}${email_padrao}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221031 13:48:18.019" level="INFO">${email} = brunacararetopAKJ9I4e@testerobot.com</msg>
+<status status="PASS" starttime="20221031 13:48:18.017" endtime="20221031 13:48:18.019"/>
+</kw>
+<status status="PASS" starttime="20221031 13:48:18.016" endtime="20221031 13:48:18.019"/>
+</kw>
+<status status="PASS" starttime="20221031 13:48:18.015" endtime="20221031 13:48:18.019"/>
+</test>
+<doc>Exemplo de teste de argumentos</doc>
+<status status="PASS" starttime="20221031 13:48:17.968" endtime="20221031 13:48:18.022"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="praticando ARGUMENTOS">praticando ARGUMENTOS</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
