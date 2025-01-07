@@ -14,7 +14,7 @@ Abaixo está uma sugestão para organização dos conteúdos neste repositório:
 qa-dev-learning/
 ├── QA/               # Conteúdos relacionados a testes de software
 │   ├── manuais/      # Testes manuais
-│   ├── automatizados/# Testes automatizados (ex.: Selenium, Cypress)
+│   ├── automatizados/# Testes automatizados (ex.: Selenium, Cypress, Robot Framework, Appium, Playwright)
 │   ├── ferramentas/  # Ferramentas e utilitários para QA
 │   └── cursos/       # Anotações e materiais de cursos de QA
 ├── DEV/              # Conteúdos sobre desenvolvimento
