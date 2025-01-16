@@ -4,33 +4,6 @@ Repositório criado com o objetivo de armazenar e organizar conteúdos relaciona
 ## Objetivo
 O principal propósito deste repositório é servir como um repositório central de aprendizado, onde materiais, anotações, exemplos de código, e outros recursos relevantes possam ser acessados e reutilizados facilmente no futuro.
 
-## Estrutura do Repositório
-Abaixo está uma sugestão para organização dos conteúdos neste repositório:
-
-```plaintext
-qa-dev-learning/
-├── QA/               # Conteúdos relacionados a testes de software
-│   ├── cursos/       # Cursos voltados para o seguinto de QA (Testes manuais e automatizados)
-│   ├── ferramentas/  # Ferramentas e utilitários para QA
-│   └── conceitos/    # Conceitos, materiais
-├── DEV/              # Conteúdos sobre desenvolvimento
-│   ├── linguagens/   # Ex.: JavaScript, Python, Java
-│   ├── frameworks/   # Ex.: React, Angular, Spring
-│   ├── design/       # Padrões de design e arquitetura de software
-│   └── outros/       # Conceitos, anotações, materiais de cursos
-├── DEVOPS/           # Conteúdos relacionados a DevOps
-│   ├── CI-CD/        # Integração contínua e entrega contínua
-│   ├── ferramentas/  # Ex.: Docker, Kubernetes, Jenkins  
-│   ├── cloud/        # Ex.: AWS, Azure, Google Cloud
-│   └── outros/       # Conceitos, anotações, materiais de cursos
-├── IA/               # Conteúdos relacionados a DevOps
-│   └── cursos/       # Anotações e materiais de cursos de IA
-│   ├── ferramentas/  # Ex.: GIT Copilot, ChatGPT, Google Gemini
-│   └── outros/       # Conceitos, anotações, materiais de cursos
-└── README.md         # Este arquivo
-
-```
-
 ## Uso
  - Certifique-se de organizar os arquivos de forma consistente, usando pastas e nomes descritivos.
  - Atualize o repositório com novos conteúdos regularmente para mantê-lo relevante.

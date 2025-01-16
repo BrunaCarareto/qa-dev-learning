@@ -1,10 +1,39 @@
-EXTENSÕES VSCODE
------------------
-Abra o VSCODE para fazer as seguintes configurações
-	ROBOT FRAMEWORK INTELLISENSE (framework de teste que vamos usar)
-	HYPER TERM THEME (Tema para terminal de interface de linha de comandos)
-	MATERIAL ICON THEME (Muda os icones padrões do VSCode)
+As seguintes extensões podem ser usadas em diversas IDEs
+-----------------------------------------------------------
+	** Terminais	
+		HYPER TERM THEME
+		HYPER IN VS CODE 
 
+	** Desenvolver em C ou C++
+		C/C++ Compile Run
+		C/C++ Extension Pack
+		C/C++ Themes
+		C/C++
 
-	
-	
+	** Desenvolver em Python
+		Python
+		Python Debugger
+
+	** Desenvolver em Robot Framework
+		Hyper RobotFramework Support
+
+	** Melhorar a visibilidade dos arquivos e pastas
+		Material Icon Theme
+		Atom Material Icons
+
+	** Git
+		GitHub Copilot
+		GitHub Copilot Chat
+		Github-copilot-intellij
+
+	** Exibir links no terminal
+		Awesome Console
+
+	** Visualizar IDE em modo escuro
+		One Dark Theme
+
+	** Destacar fechamento de chaves {]
+		Rainbow Brackets
+
+	** Criar e manipular strings diversas formas
+		String Manipulation
