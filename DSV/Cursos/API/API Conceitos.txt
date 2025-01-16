@@ -1,0 +1,28 @@
+----
+API
+----
+	Application programming Interface. (Resumidamente o coração da aplicação) onde as regras de negocio são inseridas, interface de comunicação 
+
+	REQUISIÇÕES MAIS USADAS
+	------------------------
+		GET 	  = Para listar informações pré-cadastradas (já existentes)
+		POST 	  = Para inserir novos registros 
+		PATCH/PUT = Para atualizar um registro pré-cadastrado (já existentes)
+		DELETE 	  = Para remover registros pré-cadastrados (já existentes)
+
+	TIPOS DE AUTORIZAÇÃO
+	---------------------
+		* INHERITING AUTH: Herda configurações de autorização da coleção
+		* NO AUTH        : Não será enviado nenhuma informação de autorização pelo postman
+		* API KEY	 : Informa a chave da API e o valor para autenticação dos requests
+		* BASIC AUTH	 : Autenticação básica de usuário e senha
+		* BEARER TOKEN	 : Garante permissão para as requisições através de uma chave de acesso
+
+	DEFINIÇÕES
+	----------
+		REQUEST  = O que enviamos na requisição para API
+		RESPONSE = O que recebemos de resposta da API
+
+
+
+

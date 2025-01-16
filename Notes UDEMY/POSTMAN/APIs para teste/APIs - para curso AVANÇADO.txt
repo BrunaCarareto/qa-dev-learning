@@ -1,8 +1,0 @@
-APIs para teste
-****************
-
-https://gorest.co.in/
-http://dummy.restapiexample.com/
-https://docs.postman-echo.com/
-https://hunter.io/
-https://hunter.io/api-documentation/v2

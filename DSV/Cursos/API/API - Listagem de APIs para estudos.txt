@@ -1,11 +1,19 @@
-----------------------------
-API QUE SERA USADA NO CURSO
+API MAIS FACIL
 ----------------------------
 https://simple-books-api.glitch.me
 
---------------------
-ENDPOINTS PARA TESTE
---------------------
+APIs MAIS AVANÇADAS
+----------------------------
+https://gorest.co.in/
+http://dummy.restapiexample.com/
+https://docs.postman-echo.com/
+https://hunter.io/
+https://hunter.io/api-documentation/v2
+
+
+--------------------------
+EXEMPLO DE ENDPOINTS
+--------------------------
 	GET /status
 	GET /books
 		Podemos utilizar parâmetros no filtro como TYPE and LIMIT (maximo 1 a 20)
@@ -30,3 +38,5 @@ ENDPOINTS PARA TESTE
 			clientName: "string",
 			clientEmail: "string"
 		}
+
+

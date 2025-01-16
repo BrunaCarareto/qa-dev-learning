@@ -9,10 +9,6 @@ POSTMAN
 	REQUEST (pre-request script) --> REQUEST --> RESPONSE --> REQUEST (test script)
 	COLLECTION (pre-request script) --> FOLDER (pre-request script) --> REQUEST (pre-request-scripts) --> REQUEST --> RESPONSE --> COLLECTION (test script) --> FOLDER (test script) --> REQUEST (test script)
 
-	DEFINIÇÕES
-	----------
-		REQUEST  = O que enviamos na requisição para API
-		RESPONSE = O que recebemos de resposta da API
 
 	Link acesso tutorial postman	
 	----------------------------
@@ -92,26 +88,3 @@ report_exportado.html	= Para criar um report baseado em um template
 		newman run https://api.getpostman.com/collections?apikey=$apiKey --environment https://api.getpostman.com/environments?apikey=$apiKey
 	Os links devidamente preenchidos então disponiveis na pasta do curso
 		
-----
-API
-----
-	Application programming Interface. (Resumidamente o coração da aplicação) onde as regras de negocio são inseridas, interface de comunicação 
-
-	REQUISIÇÕES MAIS USADAS
-	------------------------
-		GET 	  = Para listar informações pré-cadastradas (já existentes)
-		POST 	  = Para inserir novos registros 
-		PATCH/PUT = Para atualizar um registro pré-cadastrado (já existentes)
-		DELETE 	  = Para remover registros pré-cadastrados (já existentes)
-
-	TIPOS DE AUTORIZAÇÃO
-	---------------------
-		* INHERITING AUTH: Herda configurações de autorização da coleção
-		* NO AUTH        : Não será enviado nenhuma informação de autorização pelo postman
-		* API KEY	 : Informa a chave da API e o valor para autenticação dos requests
-		* BASIC AUTH	 : Autenticação básica de usuário e senha
-		* BEARER TOKEN	 : Garante permissão para as requisições através de uma chave de acesso
-
-
-
-
