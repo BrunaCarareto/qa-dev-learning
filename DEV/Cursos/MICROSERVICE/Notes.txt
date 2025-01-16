@@ -1,0 +1,4 @@
+O QUE SÃO MICROSERVIÇOS
+-------------------------
+	Arquitetura de softwares independentes normalmente dividos por unidade de negócio desenvolvidas de forma MICRO, ou seja, (um aplicativo para resolver cada tipo de problema - exemplo uma API responsável pelo cadastro de fornecedores e outra API responsável pelo cadastro de entregadores)
+	Os microserviços podem se comunicar entre si. Para o usuário do Software ele é uma coisa "unica", porem sua arquitetura foi feita separamente modularizada por microserviços.
