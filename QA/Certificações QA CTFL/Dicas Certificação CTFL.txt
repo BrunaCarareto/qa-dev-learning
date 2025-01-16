@@ -1,0 +1,36 @@
+A certificação CTFL (Certified Tester Foundation Level) é uma certificação de teste de software reconhecida e baseada em normas. Ela é oferecida pela ISTQB (International Software Testing Qualifications Board) e destina-se a profissionais que desejam estabelecer uma base sólida de conhecimento em testes de software. A certificação CTFL é considerada o primeiro passo para aqueles que desejam seguir uma carreira na área de testes de software.
+
+A certificação CTFL abrange vários tópicos essenciais em testes de software, incluindo:
+
+1. Princípios de Teste: Conceitos fundamentais de teste de software, como por que testar, objetivos de teste, e o processo de teste.
+
+2. Ciclo de Vida de Teste: Compreensão das diferentes fases do ciclo de vida de teste, como planejamento, projeto, execução e encerramento.
+
+3. Técnicas de Teste: Diferentes abordagens e técnicas de teste, como teste de caixa-preta, teste de caixa-branca, teste de aceitação, entre outros.
+
+4. Gerenciamento de Teste: Planejamento de testes, estimativas, rastreamento de progresso, relatórios e gerenciamento de riscos.
+
+5. Ferramentas de Teste: Conhecimento sobre ferramentas e ambientes de teste utilizados no processo de teste de software.
+
+A certificação CTFL é uma maneira de demonstrar sua compreensão dos princípios e práticas fundamentais de teste de software.
+
+Para obter a certificação CTFL, você precisa passar em um exame que cobre os tópicos mencionados acima. 
+A certificação em testes de software pode ser valiosa para avançar na carreira e demonstrar competência na área.
+
+
+------------------------------------------------------------------------ 
+A certificação que obtive é a CTFL-AT, que é uma cerificação pra pessoas de qualidade dentro de times ágeis, é uma segunda certificação dentro da BSTQB, depois da Foundation Level. Muita gente faz essa certificação no intervalo dos dois anos de experiencia requeridos pras certificações avançadas, por ser quase um requisito básico de um testador hoje em dia.
+A prova em si é bem simples, e o conteúdo dela é mais reduzido que a anterior, mas pra compensar, tem mais pegadinhas, e mais detalhes que induzem ao erro.
+Pra preparação pra AT não encontrei muito conteúdo externo, mas sei que a base tem mais conteúdo, inclusive curso na udemy, então fica como principal o syllabus, a prova de exemplo e o material de apoio do site. 
+Esse aqui, pela udemy é muito bom pelos quizes https://wex.udemy.com/course/istqb-agile-testing/
+Recomendo a todos que ao menos leiam os syllabus da BSTQB, e caso tenham interesse de fazer uma certificação, a Wex reembolsa o valor 🧡 (talvez dependa da aprovação e verba).
+
+Venda de "crédito exame" com 15% de desconto disponivel nesse link
+https://exame.bstqb.org.br/credito-exame#terms
+
+Exemplo da prova do CTFL 4.0 
+	https://bcr.bstqb.org.br/docs/exam_ctfl_4.0_sample_A[v1br].pdf
+
+Detalhes sobre os tipos de certificações
+	https://bstqb.online/mapa-certificacoes
+	https://bstqb.online/mapa-certificacoes
