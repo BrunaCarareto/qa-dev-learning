@@ -24,5 +24,17 @@ API
 		RESPONSE = O que recebemos de resposta da API
 
 
+	SOFTWARES PARA TESTE MANUAL DE APIS
+	------------------------------------
+		INSOMNIA
+		POSTMAN
 
+	RESUMO DOS STATUS DISPONIVEIS
+	-----------------------------
+		Para mais detalhes acessar: https://protect-us.mimecast.com/s/dC0iCzpNPXCMnlJ93uMVfF5?domain=httpstatusdogs.com    ou    https://protect-us.mimecast.com/s/VsdkCAD7q1HNVy72ghBtuTK?domain=restfulapi.net
 
+		1xx -> Mensagens informativas.
+		2xx -> Mensagens de sucesso.
+		3xx -> Mensagens de redirecionamento (precisa de mais informação para concluir a solicitação)
+		4xx -> Mensagens de erro "cliente"
+		5xx -> Mensagens de erro "servidor"
