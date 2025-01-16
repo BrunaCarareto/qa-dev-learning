@@ -13,20 +13,21 @@ qa-dev-learning/
 │   ├── manuais/      # Testes manuais
 │   ├── automatizados/# Testes automatizados (ex.: Selenium, Cypress, Robot Framework, Appium, Playwright)
 │   ├── ferramentas/  # Ferramentas e utilitários para QA
-│   └── cursos/       # Anotações e materiais de cursos de QA
+│   └── outros/       # Conceitos, anotações, materiais de cursos
 ├── DEV/              # Conteúdos sobre desenvolvimento
 │   ├── linguagens/   # Ex.: JavaScript, Python, Java
 │   ├── frameworks/   # Ex.: React, Angular, Spring
 │   ├── design/       # Padrões de design e arquitetura de software
-│   └── cursos/       # Anotações e materiais de cursos de DEV
+│   └── outros/       # Conceitos, anotações, materiais de cursos
 ├── DEVOPS/           # Conteúdos relacionados a DevOps
 │   ├── CI-CD/        # Integração contínua e entrega contínua
 │   ├── ferramentas/  # Ex.: Docker, Kubernetes, Jenkins
 │   ├── cloud/        # Ex.: AWS, Azure, Google Cloud
-│   └── cursos/       # Anotações e materiais de cursos de DevOps
-├── IA/           # Conteúdos relacionados a DevOps
+│   └── outros/       # Conceitos, anotações, materiais de cursos
+├── IA/               # Conteúdos relacionados a DevOps
 │   └── cursos/       # Anotações e materiais de cursos de IA
 │   ├── ferramentas/  # Ex.: GIT Copilot, ChatGPT, Google Gemini
+│   └── outros/       # Conceitos, anotações, materiais de cursos
 └── README.md         # Este arquivo
 
 ```
