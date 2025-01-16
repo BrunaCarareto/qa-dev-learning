@@ -1,0 +1,15 @@
+-------
+DEVOPS
+-------
+	Responsável por tornar o processo mais ágil, atender a necessidade do negócio. Unir o desenvolvimento, operação e qualidade do sistema. Fazer levantamento de métricas para acompanhar o funcionamento do sistema/servidores.
+
+IDEIA --> CODIGO --> TESTES --> PACOTE --> SERVIDORES/AMBIENTES --> EXPLORAÇÃO/HOMOLOGAÇÃO/APROVAÇÃO --> IMPLANTAR --> LIBERADO EM PRODUÇÃO
+---------------------------------------------------- PIPLINE DE ENTREGA DE UM SOFTWARE ----------------------------------------------------
+
+
+
+----------------------------------------
+ALM - (Application lifecycle management)
+----------------------------------------
+	Estrutura composta de três pilares (PESSOAS, PROCESSOS, FERRAMENTAS), quando unidos fornecem os recursos necessários para que as empresas possam gerenciar o ciclo de vida das aplicações.
+	Fases do ALM (definição, construção, operação, conclusão)
