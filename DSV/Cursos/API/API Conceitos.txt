@@ -2,6 +2,7 @@
 API
 ----
 	Application programming Interface. (Resumidamente o coração da aplicação) onde as regras de negocio são inseridas, interface de comunicação 
+	API facilita a interação entre softwares diferentes sem precisar saber detalhes da implementação do software
 
 	REQUISIÇÕES MAIS USADAS
 	------------------------
@@ -38,3 +39,17 @@ API
 		3xx -> Mensagens de redirecionamento (precisa de mais informação para concluir a solicitação)
 		4xx -> Mensagens de erro "cliente"
 		5xx -> Mensagens de erro "servidor"
+
+HTTP 
+-------------
+	Principal protocolo de comunicação de sistemas WEB
+
+
+REST 
+-------------
+	Representational state transfer (Tranferência de estado representacional)
+	REST consiste em princípios/regras/constraints que, quando seguidas, permitem a criação de um projeto com interfaces bem definidas.
+	
+	Sistemas que utizam os principios REST são chamados de RESTfull sendo assim, resumidamente:
+	REST 	 (Conjunto de principios de arquitetura WEB)
+	RESTfull (capacidade de determinado sistema aplicar os principios REST)
