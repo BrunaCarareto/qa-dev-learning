@@ -1,0 +1,10 @@
+EXTENSÕES VSCODE
+-----------------
+Abra o VSCODE para fazer as seguintes configurações
+	ROBOT FRAMEWORK INTELLISENSE (framework de teste que vamos usar)
+	HYPER TERM THEME (Tema para terminal de interface de linha de comandos)
+	MATERIAL ICON THEME (Muda os icones padrões do VSCode)
+
+
+	
+	
