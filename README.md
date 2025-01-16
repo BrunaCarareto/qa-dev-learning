@@ -10,10 +10,9 @@ Abaixo está uma sugestão para organização dos conteúdos neste repositório:
 ```plaintext
 qa-dev-learning/
 ├── QA/               # Conteúdos relacionados a testes de software
-│   ├── manuais/      # Testes manuais
-│   ├── automatizados/# Testes automatizados (ex.: Selenium, Cypress, Robot Framework, Appium, Playwright)
+│   ├── cursos/       # Cursos voltados para o seguinto de QA (Testes manuais e automatizados)
 │   ├── ferramentas/  # Ferramentas e utilitários para QA
-│   └── outros/       # Conceitos, anotações, materiais de cursos
+│   └── outros/       # Conceitos, materiais
 ├── DEV/              # Conteúdos sobre desenvolvimento
 │   ├── linguagens/   # Ex.: JavaScript, Python, Java
 │   ├── frameworks/   # Ex.: React, Angular, Spring
@@ -21,7 +20,7 @@ qa-dev-learning/
 │   └── outros/       # Conceitos, anotações, materiais de cursos
 ├── DEVOPS/           # Conteúdos relacionados a DevOps
 │   ├── CI-CD/        # Integração contínua e entrega contínua
-│   ├── ferramentas/  # Ex.: Docker, Kubernetes, Jenkins
+│   ├── ferramentas/  # Ex.: Docker, Kubernetes, Jenkins  
 │   ├── cloud/        # Ex.: AWS, Azure, Google Cloud
 │   └── outros/       # Conceitos, anotações, materiais de cursos
 ├── IA/               # Conteúdos relacionados a DevOps
