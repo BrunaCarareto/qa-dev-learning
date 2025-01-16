@@ -24,7 +24,11 @@ qa-dev-learning/
 │   ├── ferramentas/  # Ex.: Docker, Kubernetes, Jenkins
 │   ├── cloud/        # Ex.: AWS, Azure, Google Cloud
 │   └── cursos/       # Anotações e materiais de cursos de DevOps
+├── IA/           # Conteúdos relacionados a DevOps
+│   └── cursos/       # Anotações e materiais de cursos de IA
+│   ├── ferramentas/  # Ex.: GIT Copilot, ChatGPT, Google Gemini
 └── README.md         # Este arquivo
+
 ```
 
 ## Uso
