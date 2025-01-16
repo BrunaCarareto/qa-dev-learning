@@ -1,0 +1,6 @@
+Bibliotecas basicas para se trabalhar com C
+ #include <stdio.h>   	Que serve para ler inputs e mostrar outputs
+ #include <stdlib.h>	Que serve para alocar memoria, gerar random, converter valores...
+
+Para poder compilar o projeto em C/C++ é necessario fazer a seguinte instalação
+	tdm64-gcc-10.3.0-2.exe
