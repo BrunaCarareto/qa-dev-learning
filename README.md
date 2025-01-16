@@ -12,7 +12,7 @@ qa-dev-learning/
 ├── QA/               # Conteúdos relacionados a testes de software
 │   ├── cursos/       # Cursos voltados para o seguinto de QA (Testes manuais e automatizados)
 │   ├── ferramentas/  # Ferramentas e utilitários para QA
-│   └── outros/       # Conceitos, materiais
+│   └── conceitos/    # Conceitos, materiais
 ├── DEV/              # Conteúdos sobre desenvolvimento
 │   ├── linguagens/   # Ex.: JavaScript, Python, Java
 │   ├── frameworks/   # Ex.: React, Angular, Spring
