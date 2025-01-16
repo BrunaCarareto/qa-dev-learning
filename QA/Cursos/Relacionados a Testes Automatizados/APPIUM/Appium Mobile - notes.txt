@@ -1,0 +1,9 @@
+
+APPIUM PARA MOBILE
+------------------------
+Aplicativo de teste mobile da QAzando no link https://drive.google.com/drive/folders/13SYldn1l6_ZeRSj41n-80IOQo-Y3AflW
+
+usuario: ​​teste@teste.com
+senha: ​​123456
+
+certificados qazando  https://certificado.qazando.com.br/events

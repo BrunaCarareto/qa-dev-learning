@@ -1,0 +1,14 @@
+CYPRESS
+----------
+comando para iniciar projeto 	---	npm init -y
+site para instalação  https://docs.cypress.io/app/get-started/install-cypress
+comando para instalar  --- 	npm install cypress --save-dev
+iniciar cypress 	--- 	npx cypress open
+	
+
+abrir o terminal, acessar a pasta onde o projeto será criado, para executar os comandos para instalar o cypress (pode ser usado tanto para teste WEB quanto para API)
+
+plugins interessantes     cypress snippets,   symbolss
+
+se quando digitar cy nao aparecer nada no inicio do arquivo precisa colocar a referencia do cypress    /// <reference types="cypress"/>
+

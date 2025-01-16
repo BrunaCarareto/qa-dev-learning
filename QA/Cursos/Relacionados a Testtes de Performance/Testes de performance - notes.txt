@@ -1,0 +1,8 @@
+TESTES DE PERFORMANCE
+-----------------------
+WIREMOCK   simulador de APIs que pode ser executado localmente para efetuar teste de performance (treinamento)
+	site  ​​https://github.com/qazando/wiremock
+	baixar o projeto e abrir na IDE. No readme file vai ter o comando para executar o WIREMOCK no terminal da IDE
+	
+para ele funcionar precisa instalar o JAVA jkd  11 ou superior
+	site ​​https://www.oracle.com/br/java/techno...

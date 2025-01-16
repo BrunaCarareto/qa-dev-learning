@@ -1,0 +1,19 @@
+PLAYWRIGHT 
+-------------
+site para instalação https://playwright.dev/docs/intro
+comando para instalar no site   exemplo    npm init playwright@latest
+
+abrir o terminal, acessar a pasta onde o prjeto será criado, para executar os comandos para instalar o playwright
+lembrar de escolher a opção JavaScript
+
+baixar o plugin do playwright original da microsoft no vc code 
+
+
+NOTES
+---------
+para utilizar o CYPRESS e PLAYWRIGHT é necessário ter o NODE intalado para interagir com o java script
+e ambos podem ser utilizados com a IDE do visual studio code
+ 	- baixar vscode
+	- baixar o node.js
+depois do node instalado utilizar o comando npm para fazer as instalações necessárias
+npm  (node packet managemnt)
