@@ -1,5 +1,5 @@
 # QA-Dev-Learning
-Este repositório privado foi criado com o objetivo de armazenar e organizar conteúdos relacionados às áreas de **Qualidade de Software (QA)**, **Desenvolvimento (DEV)** e **DevOps**, adquiridos durante cursos, treinamentos e estudos.
+Repositório criado com o objetivo de armazenar e organizar conteúdos relacionados às áreas de **Qualidade de Software (QA)**, **Desenvolvimento (DEV)** e **DevOps**, adquiridos durante cursos, treinamentos e estudos.
 
 ## Objetivo
 O principal propósito deste repositório é servir como um repositório central de aprendizado, onde materiais, anotações, exemplos de código, e outros recursos relevantes possam ser acessados e reutilizados facilmente no futuro.
