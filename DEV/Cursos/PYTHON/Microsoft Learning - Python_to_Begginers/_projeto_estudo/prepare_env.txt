@@ -1,0 +1,27 @@
+Here you can find details about how to configure a environment project 
+
+comand (venv) to create a new virtual environment
+    python -m venv env
+
+comand to activate the environment
+    env\Scripts\Activate
+
+you can create (requirements.txt) will all packages required to execute the program configured
+example of data to use in that file 
+    python-dateutil==2.8.2
+    redis==5.0.0
+
+To other person be able to use the repository
+install all packages required with the virtual environment activated
+you can do that running the command (pip install) to install libraries specified in requirements.txt:
+    pip install -r requirements.txt
+
+command get a list of installed libraries
+    pip list 
+    pip freeze
+
+comand to deactivate the environment
+    deactivate   
+
+to execute the python programs
+    python filename.py    
