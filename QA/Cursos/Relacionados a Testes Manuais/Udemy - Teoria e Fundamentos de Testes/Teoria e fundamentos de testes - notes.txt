@@ -1,0 +1,114 @@
+---------------------
+QUALIDADE DE SOFTWARE
+---------------------
+Processo sistemático que focaliza todas as etapas e artefatos produzidos com o objetivo de garantir a conformidade de processos e produtos, prevenindo e eliminando defeitos
+
+----------------
+O QUE É TESTAR?
+----------------
+Verificar se o comportamento de um determinado objeto está de acordo com o esperado, considerando o estímulo que foi dado;
+
+	-- Testes não conseguem verificar 100% dos resultados pois em alguns casos existem infinidades de entradas distintas;
+	-- Testes custam em média 20% a 30% do custo total da criação de software;
+
+	PERFIL TESTER = Detalhista, investigativo, paciente, focado, criterioso, perspicaz, motivado, pessimista, procura por problemas, elaborar testes relevantes, alguem que seja referência de critério/qualidade. Investigar o comportamento do software além do que a documentação descreve, utilizar a capacidade de persuação e negociação a favor da qualidade, sugerindo melhorias e possíveis soluções.
+
+------------
+FUNDAMENTOS
+------------
+	QUANDO TESTAR (Níveis de teste)
+	--------------------------------
+		N1 - Teste de unidade		= Nivel de classe. Testar a menor parte do sistema, procurar falhas de funcionalidade independente de outras funções. Geralmente são automatizados - (DSV)
+		N2 - Teste de integração	= Nivel de componente. Testar componente do sistema (validar a comunicação entre os componentes do sistema. Geralmente são automatizados - (DSV)
+		N3 - Teste de sistema		= Executar o software como se fosse o usuário final, utilizando a interface do usuário. Testes coerentes com os requisitos de desenvolvimento  - (QA) 
+	 	N4 - Teste de aceitação		= Executar o software sob o ponto de vista do usuário final - (USUÁRIO FINAL)
+	 	N5 - Teste Alfa			= Executar o sistema de forma não planejada, sob o ponto de vista do usuário final, utilizando poucas pessoas, ambiente controlado - (USUÁRIO FINAL)  
+	 	N6 - Teste Beta			= Executar o sistema de forma não planejada, sob o ponto de vista do usuário final, utilizando várias pessoas - (USUÁRIO FINAL)
+		N7 - Testes de Regressão 	= Pode ser realizado a qualquer momento, verificar se tudo continua funcionando normalmente após uma alteração no sistema, pode feito manualmente ou automatizados - (QA) 		 
+		
+
+	COMO TESTAR (Técnicas de teste)
+	--------------------------------
+		ESTRUTURAL - CAIXA BRANCA ou CAIXA ABERTA (possível visulizar o código do sistema)
+		-----------------------------------------------------------------------------------
+		Os testes de CAIXA BRANCA, são baseados em teste de cobertura, caminhos, de comandos, de condições;
+
+		FUNCIONAL - CAIXA PRETA ou CAIXA FECHADA (não visualiza o código do sistema - se baseia em entradas/saidas)
+		---------------------------------------------------------------------------------------------------------------
+		Niveis de testes utilizados: TESTE DE INTEGRAÇÃO, TESTE DE SISTEMA, TESTE DE ACEITAÇÃO, TESTE ALFA, TESTE BETA.	
+		Os testes de CAIXA PRETA, são baeado em cenários, casos de uso e em análises de limites de valores 
+
+		BASEADA EM ERRO
+		----------------
+		Não possui uma ordem uma sequencia a ser seguida durante os testes
+
+	O QUE TESTAR (Tipos de testes)
+	-------------------------------
+		- Teste de funcionalidade	= Básico e intuitivo, necessário validar que as funções estejam funcionando corretamente (usar todos os níveis de testes descritos acima)
+		- Teste de desempenho		= Necessário validar o tempo de resposta do sistema para determinadas operações (Exemplo de software JMETER - detalhes em: youtube.com/watch?v=IEm3UCfUn2s)
+		- Teste de usabilidade		= Validam aspectos que envolvem a experência do usuário, se o sistema está ou não intuitivo
+		- Teste de segurança		= Validam a proteção do sistema contra invasões ou acessos não autorizados, informações criptografadas, perfis de acesso
+		- Teste de portabilidade	= Validam o funcionamento do sistema em diferentes plataformas e dispositivos (windows, mac, linux, IOS, android, diversos navegadores, entre outros...)
+		- Teste de stress		= Abrange cargas de trabalho extrema, checar memória, hardware, serviços ao validar a resposta do sistema para determinadas operações.
+		- Teste de concorrência		= Como o sistema se comporta ao realizar diferentes operações ao mesmo tempo.
+
+-----------
+DEFINIÇÕES
+-----------
+	TESTES MANUAIS		=	Precisa da intervenção humana para testar cada uma das funcionalidades. Abrir o sistema e executar as operações no sistema para testar
+	TESTES AUTOMATIZADOS	=	Testes codificados, os casos de testes são criados e desenvolvidos via código. Após criado uma vez, basta executa-lo ou agendar a execução automática do mesmo
+	TESTE ESTÁTICO		=	Analisar o código SEM EXECUTÁ-LO, e verificar se as boas práticas foram sequidas, revisar o código escrito. 
+					O que verificar: documentação, variaveis com nomenclaturas, nullPointers estão tratados, está legivel, conexão com banco de dados está sendo aberto e fechado?
+					(Exemplo de software: Findbugs)
+	TESTE DINÂMICO		=	Todos os níveis de testes em que são realizadas execuções no sistema (niveis descritos acima)
+	
+					     VANTAGENS E DESVANTAGENS
+     |-------------------------------------------------------------------------------------------------------------|
+     |	              TESTES MANUAIS					        TESTES AUTOMATICOS                 |
+     |-------------------------------------------------------------------------------------------------------------|
+     |	Velocidade de execução baixa		       |	   Execução muito rápida                           |
+     |	Repetitivo e cansativo		 	       |	   Não cansam e não setem preguiça                 |
+     |	Não exige tecnologias			       |	   Exige dominio de tecnologia específica          |
+     |	Alto custo a cada execução		       |           Alto custo apenas na criação                    |
+     |	Possuem limitações quando o teste              |	   Permite testar situações impossíveis de         |
+     | envolve situações de grande paralelisto	       |      testar manualmente                                   |
+     |   Podem explorar além do cenário                |	   Faz apenas o que foi programado para fazer      |
+     |	Podem avaliar questões visuais, cores, formas  |	   Não avaliam questões visuais                    |
+     |	Podem avaliar questões de usabilidade	       |	   Não avaliam questões de usabilidade             |
+     |-------------------------------------------------------------------------------------------------------------|
+     
+--------------
+BOAS PRÁTICAS
+--------------
+	- Quem deve planejar os casos de testes não deve participar da programação(codificação) do software
+	- Selecione cenários de testes que sejam executados dentro de um periodo de tempo estipulado
+	- Procure priorizar as funcionalidades mais relevantes
+	- Lembre-se sempre de testar valores limites, para validar intervalos aceitos
+	- Valide campos obrigatórios, valores inválidos, quantidades caracteres, mensagens de retorno
+	- Valores positivos, negativos, zero, intervalos fechados ou abertos
+	- Não execute cenários roboticamente, não se limite nos cenários solicitados, explore quando necesssário
+	- Ao encontrar uma falha, detalhe como e onde o problema está acontecendo, de preferencia utilize imagens demonstrativas
+	- Após o desenvolvedor corrigir, faça um teste de regressão para verificar se está funcionando adequadamente
+
+-----------------------
+DEFINIÇÕES DE SOFTWARE
+-----------------------
+	ERRO    = Item de informação ou estado de execução inconsistente. É um engano, ou mal entendido cometido pelo programador.
+	DEFEITO = Deficiência mecânica ou algorítima que se ativada pode levar a uma falha. É uma anomalia no software que pode leva-lo a comporta-se incorretamente.
+	FALHA   = É a incapacidade do software de realizar a função requisitada. Diferença entre observado e o esperado.
+	
+	( Um ERRO gera um DEFEITO que leva a uma FALHA )
+
+
+-----
+VV&T 	
+-----
+	Verificação, validação, teste
+
+---------
+MODELO V
+---------
+ESPECIFICAÇÃO						   UAT - TESTE DE ACEITAÇÃO
+  PLANO DE ALTO NIVEL                                TESTE DE SISTEMA
+            PLANO DE BAIXO NIVEL	        TESTE DE INTEGRAÇÃO
+	                 CODIFICAÇÃO       TESTE DE UNIDADE
