@@ -9,7 +9,8 @@ http://dummy.restapiexample.com/
 https://docs.postman-echo.com/
 https://hunter.io/
 https://hunter.io/api-documentation/v2
-
+https://www.programmableweb.com/api
+https://WWW.serverest.dev/#/
 
 --------------------------
 EXEMPLO DE ENDPOINTS
