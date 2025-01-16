@@ -1,0 +1,26 @@
+FERRAMENTAS UTILIZADAS
+--------------------------
+	-- PYTHON 3.9.9 
+	https://protect-us.mimecast.com/s/5HlUCpY6w2inyrXKGIP_caF?domain=python.org)
+
+	-- PIP 21.2.4 
+	Gerenciador de pacotes do python, por onde conseguimos fazer a instalação de bibliotecas inclusive a do ROBOT FRAMEWORK.
+
+	-- ROBOT FRAMEWORK 
+	https://protect-us.mimecast.com/s/zr9lCqxXRZU8RAmlDFXUHnn?domain=robotframework.org)
+	
+	-- VISUAL STUDIO CODE 
+	https://protect-us.mimecast.com/s/nicKCrkNZ9s86KLopF42jjz?domain=code.visualstudio.com
+	
+	-- GIT BASH 
+	https://protect-us.mimecast.com/s/HlHvCv27qZS74mMKGTANEGy?domain=gitforwindows.org
+
+	-- NOTE JS 
+	Essa foi a linguagem utilizada para desenvolviemnto do micro serviço utilizado no curso
+	https://protect-us.mimecast.com/s/cADmCwp89rCGPMY97s1vfpY?domain=nodejs.org) 
+
+	-- HYPER
+	Terminal "mais bonitinho"
+
+	-- VSCODE ou PYCHARM, ambas as IDEs podem ser utilizadas para trabalhar com robot framework
+

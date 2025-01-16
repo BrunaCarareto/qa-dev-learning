@@ -1,0 +1,93 @@
+ROBOT FRAMEWORK
+------------------
+	É um Framework de automzatização de testes de código aberto e genérico que foi desenvolvido em Python
+	Ou seja, como ele é genérico, é possivel testar softwares de diversas linguagens apenas importante novas bibliotecas
+	Sendo assim, Podemos realizer testes: Web, mobile, API, desktop....
+	Podemos utilizar BDD sem precisar instalar puglin ou configuração extra, pois ele já tem essa função NATIVA
+
+
+INSTALAÇÃO
+------------
+	Instale o PYTHON mais atual
+	Adicione a pasta de instalação do PYTHON nas variaveis de ambiente do seu computador
+	Instale o ROBOTFRAMEWORK pelo CMD usando o comando: pip install robotframework
+	Para atualizar o ROBOTFRAMEWORD pelo CMD udando o comando: pip install --upgrade robotframework
+	Para ver as libraries instaladas utilize o comando: pip freeze
+	Para instalar library de telas WEB e API REQUEST comandos:
+	pip install --upgrade robotframework-selenium2library
+	pip install robotframework-requests
+	Para forçar a instalação de uma versão especifica utilize o comando: pip install -U robotframework-requests==0.7.2
+
+	Para fazer os testes utilizando o SELENIUM é necessário baixar os drivers dos navegadores (Antes de baixar o driver, lembre de verificar qual é a versão do seu respectivo navegador e baixe o driver compativel)
+	Os drivers do navegador devem ser colados dentro da pasta SCRIPTS existente dentro da pasta de instalação do PYTHON
+
+
+TIPOS DE VARIAVEIS
+------------------
+	SET GLOBAL VARIABLE 				-> esse tipo de variavel pode ser utilizada em todas as suites do projeto
+	SET SUITE  VARIABLE 				-> esse tipo de variavel pode ser utilizado somente na SUITE em questão
+	SET TEST   VARIABLE 				-> esse tipo de variavel pode ser utilizado somente no caso de teste em que ela foi criada
+
+	${variavel_comum} TESTE    		 	-> essa é uma variavel simples
+ 		log ${variavel_comum}
+	@{variavel_lista} MORANGO BANANA MAÇA    	-> essa é uma lista (cada item vai ocupar uma determinado posição) de variavel
+		log ${variavel_lista[0]}
+	&{variavel_dicionario} nome=bruna  idade=10     -> essa é um dicionário (conjunto de dados) de variavel
+		log ${variavel_dicionario.nome}
+
+LINKS UTEIS
+------------
+	Documentação do Robot Framework	
+	https://protect-us.mimecast.com/s/AMzNCL9l6JIRXxE4AU4VDT9?domain=marketsquare.github.io
+	https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html
+
+	Documentação de bibliotecas disponiveis para uso
+	https://protect-us.mimecast.com/s/dOcrCKrkXQS29g3mlfNOPG6?domain=robotframework.org
+
+	Comunidades do Robot Framework
+	https://robotframework.org/#community
+
+	Outros
+	https://pypi.python.org/pypi
+	https://robotframework.org/
+	https://forum.robotframework.org/
+
+
+
+COMANDOS TERMINAL PARA EXECUTAR TESTES
+---------------------------------------
+	robot post.robot							**Para executar o framwork ROBOT nos casos de testes criados. Dessa forma, os arquivos de retorno serão criados na RAIZ do projeto.
+
+	robot -d .logs post.robot						**Para executar o framwork ROBOT nos casos de testes criados. Os arquivos de retorno serão salvos em uma pasta separada (logs)
+
+	robot -d ./logs -i bugs tests/post.robot 	  			**Para executar o framwork ROBOT somente nos casos de testes que estão com a [tag] BUGS colocada. 
+							  			  Os arquivos de retorno serão salvos em uma pasta separada (logs).
+
+	pip install   NOME_DA_BIBLIOTECA					**Para para a instalação da biblioteca desejada
+
+	robot -d CaminhodaPastaparaSalvarLOG .\PastadoTesteRobot		**Para executar todas as suites da pasta
+
+	robot -d CaminhodaPastaparaSalvarLOG .\PastadoTeste\file.robot		**Para executar somente as suites de um arquivo
+	
+	robot .\file.robot							**Caso ja esteja dentro da pasta onde o arquivo de teste está e não queira definir onde o log será salvo
+	
+	robot -t "nome do teste que deseja executar" .\file.robot		**Caso ja esteja dentro da pasta onde o arquivo de teste está e queira executar o teste específico da suite sem definir onde o log será salvo
+	
+	robot -i nomeDaTagQuedesejaExecutar  .\filerobot			**Caso ja esteja dentro da pasta onde o arquivo de teste está e queira executar todos os casos de teste que possuem uma determinada TAG
+	
+	robot -e nomeDaTagQueNAOdesejaExecutar  .\filerobot			**Caso ja esteja dentro da pasta onde o arquivo de teste está e queira executar todos os testes QUE NÃO POSSUEM uma determinada TAG
+
+  
+
+
+BIBLIOTECAS MAIS UTILIZADAS
+-----------------------------------
+	Para testes de API			=	robotframework-requests   ou   RESTLibrary
+	Para testes WEB com selenium		=	SeleniumLibrary
+	Para testes WEB com Playwrigth		=	Browser_Library
+	Para utilização de MONDODB		=	robot-mongodb-library	e/ou	pymongo[srv]
+
+
+GHERKIN BDD
+------------
+	Seguindo a estrutura DADO, QUANDO, ENTÃO
