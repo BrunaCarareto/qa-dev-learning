@@ -1,0 +1,49 @@
+*** Instalação WSL para conseguir utilizar Linux dentro do windows
+	wsl --install
+	wsl list
+
+*** Instalação da docker
+	sudo su
+	apt install docker-ce docker-ce-cli containerd.io -y
+	sudo apt update && sudo apt upgrade -y
+	sudo apt remove docker docker-engine docker.io containerd runc -y
+	sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install docker-ce docker-ce-cli containerd.io -y
+	docker --version
+
+*** Instalação do git wsl
+	git --version
+	git config --global user.name "bruna"
+	git config --global user.email "brunaramoscarareto@hotmail.com"
+	git config --list
+	ssh-keygen -t ed25519 -C "brunaramoscarareto@hotmail.com"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519
+	cat ~/.ssh/id_ed25519.pub
+
+*** Pegue a chave SSH retornada e salve nas configurações do GIT (site)
+
+*** Clonando um projeto	
+	cd ..
+	cd home
+	cd bruna
+	mkdir projetos
+	git clone git@github.com:rodrigobranas/cccat20_1.git
+
+*** Instalar/Ativar NVM e dependências no ubuntu
+	sudo apt install curl -y
+	curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+	export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+	exec bash
+	nvm --version
+	nvm install --lts
+
+*** Para verificar todas as versões do NODE que estão instaladas e que podem ser instaladas
+	nvm list
+
