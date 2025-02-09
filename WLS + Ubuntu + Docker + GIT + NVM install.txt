@@ -15,7 +15,7 @@
 	sudo apt install docker-ce docker-ce-cli containerd.io -y
 	docker --version
 
-*** Instalação do git wsl
+*** Instalação do git no Ubuntu
 	git --version
 	git config --global user.name "bruna"
 	git config --global user.email "brunaramoscarareto@hotmail.com"
