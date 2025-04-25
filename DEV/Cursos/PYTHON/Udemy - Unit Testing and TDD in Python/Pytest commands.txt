@@ -1,9 +1,0 @@
-python -m pip install -U pytest   >   to install pytest
-python -m pip install mock        >   to install mock options to simulate data
-
-pytest -v   > execute all test cases implemented in the repo, and it is possible to see the coverage of them
-pytest -q   > execute all test cases implemented in the repo in quiet mode so only the quantity of pass and fail will be displayed
-pytest -s   > execute all test cases implemented in the repo, and it is possible to see details of the application's logs
-
-pytest api/v1/tests/test_mcode_create_view.py -v     > execute a specific test file  (all tests in this file will be executed)
-pytest -k "test_can_create_usage_with_jsonauth"      > looking into the full repo and executing only the test case name requested
