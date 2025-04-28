@@ -20,3 +20,12 @@ Explicação sobre floating points (casas decimais) em python
 
 Explicação sobre PRINT formats 
 > https://pyformat.info/
+
+---
+
+Links de exercicios praticos em python:
+- Pratica básica : http://codingbat.com/python   
+- Pratica matemática (mais dificil): https://projecteuler.net/archives
+- Problemas praticos: http://www.codeabbey.com/index/task_list
+- Problemas diários: https://www.reddit.com/r/dailyprogrammer
+- Problemas avançados, com poucas dicas : http://www.pythonchallenge.com/
