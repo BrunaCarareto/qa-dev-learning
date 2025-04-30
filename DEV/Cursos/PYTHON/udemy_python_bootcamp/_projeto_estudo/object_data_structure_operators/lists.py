@@ -71,3 +71,21 @@ print(f"juntando listas: ", novo_alfabeto)
 
 novo_alfabeto.reverse()
 print(f"alfabeto ordenado decrescente: ", novo_alfabeto)
+
+print("\nTransformando string em lista de letras")
+mylist = []
+for letter in 'BRUNA':
+    mylist.append(letter)
+print(mylist)
+
+mylist = [ letter for letter in 'BRUNA']    # isso faz o mesmo que as linhas 92 até 95
+print(mylist)
+random_list = [ num for num in range(0,11)]     # isso vai gerar uma lista de 0 a 10
+print(random_list)
+
+print("\n")
+print("convertendo valores direto na lista")
+celcius = [10,15.7, 20.7,32]
+fahrenheit = [((9/5)*temp + 32) for temp in celcius]
+print(f"A temperatura em ºC é ", celcius)
+print(f"A temperatura em ºF é ", fahrenheit)
