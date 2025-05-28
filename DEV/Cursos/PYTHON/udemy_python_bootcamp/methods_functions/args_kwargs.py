@@ -35,6 +35,23 @@ print('O resultado da soma é', result3, '\n')
 result4 = somar_args(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 print('O resultado da soma é', result4, '\n')
 
+def myfunc(*args):
+    """
+    This function takes the args provided, and returns a list containing only those arguments that are even.
+    """
+    even_numbers = []
+    for item in args:
+        if item % 2 == 0:
+            even_numbers.append(item)
+        else:
+            continue
+
+    print('\nBaseado nos números:', args)
+    print('Os números pares são: ', even_numbers)
+    return  even_numbers
+
+myfunc(1,5,6,8,10,99)
+
 print("\n")
 
 ###################### Exemplo de função usando **kwargs
@@ -63,3 +80,21 @@ def exibir_info(*args, **kwargs):
     print("Da pessoa", kwargs)
 
 exibir_info(10, nome='Maria',sobrenome='Silva')
+
+print("\n")
+
+
+###################### outros exemplos dos exercicios avaliativos
+def letras_maiusculas_minusculas(string):
+    string_list = list(string)
+
+    for index in range(len(string_list)):
+        if (index+1) % 2 == 0:
+            string_list[index] = string_list[index].upper()
+        else:
+            string_list[index] = string_list[index].lower()
+
+    print(''.join(string_list))
+    return ''.join(string_list)
+
+letras_maiusculas_minusculas('brunaramoscarareto')
