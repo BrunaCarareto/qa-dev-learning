@@ -1,13 +1,13 @@
 #   Test your knowledge of data structures and algorithms with this quiz.
 
-'''
+"""
     NUMBERS = numerical information, that can be INTEGER, FLOAT .  For example   =    1   1.01
     STRINGS = text information.                                    For example   =    "bruna"
     LISTS = A list of elements, mutable                            For example   =    [1,2,3,4,5]
     TUPLES = A list of elements, immutable                         For example   =    (1,2,3,4,5)
     DICTIONARIES = A list of key-value pairs, mutable              For example   =    {"name": "bruna", "age": 30}
     SET = conjuntos que só aceitam valores unicos                  For example   =    [1,2,3]
-'''
+"""
 
 #####################   NUMBERS
 number = ((1000 / 10) + (10 * 10) + 0.25) - 100
