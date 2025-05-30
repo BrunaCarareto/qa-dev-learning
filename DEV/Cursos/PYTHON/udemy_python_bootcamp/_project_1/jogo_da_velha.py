@@ -66,6 +66,7 @@ def verificar_vencedor(tabuleiro, jogador):
     """
     Função que verifica se o jogador atual venceu o jogo.
     Função recebe o tabuleiro (lista de 9 posições) e o símbolo do jogador ('X' ou 'O')
+    O jogador que alinhar três símbolos iguais na horizontal, vertical ou diagonal vence
     """
     # Linhas
     for i in range(0, 9, 3):
