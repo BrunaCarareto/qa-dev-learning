@@ -1,6 +1,8 @@
+####################################################### Level 1 #######################################################
+
 def valores_par_ou_impar(a,b):
     """
-        Metodo que recebe dois números
+        Função que recebe dois números
         Se os dois números recebidos forem par, o menor valor será retornado
         Se um dos números for impa, o maior numero será retornado
     """
@@ -20,7 +22,7 @@ print('\n')
 
 def mesma_letra_inicial(a, b):
     """
-        Metodo que recebe duas strings
+        Função que recebe duas strings
         Se as duas strings começarem com a mesma letra, retorna True
         Caso contrário, retorna False
     """
@@ -38,7 +40,7 @@ print('\n')
 
 def soma_numeros_pares(num1, num2):
     """
-        Metodo que recebe dois números
+        Função que recebe dois números
         Se a soma dos dois números for 20, ou, se um dos números informados é 20 retorna TRUE
         Caso contrário, retorna FALSE
     """
@@ -58,7 +60,7 @@ print('\n')
 
 def letra_maiuscula(empresa='macdonald'):
     """
-        Metodo que recebe uma string, e coloca a primeira e a quarta letra em maiúscula.
+        Função que recebe uma string, e coloca a primeira e a quarta letra em maiúscula.
     """
     empresa = empresa[0].upper() + empresa[1:3] + empresa[3].upper() + empresa[4:]
     print(empresa)
@@ -70,7 +72,7 @@ print('\n')
 
 def inverter_frase(frase):
     """
-        Metodo que recebe uma string e inverte a ordem das palavras.
+        Função que recebe uma string e inverte a ordem das palavras.
     """
     palavras = frase.split()
     palavras_invertidas = palavras[::-1]
@@ -81,25 +83,33 @@ inverter_frase("Python é uma linguagem de programação")
 
 print('\n')
 
-def verifique_numero(num):
+def verifique_numero_abs(num):
     """
-        Metodo que recebe um número, se ele estiver entre 10 e 100, ou for igual a 200, retorna True.
-        Caso contrario, retorna False.
-    """
-    if (10 <= num <= 100) or num == 200:
-        print('Numero selecionado: ', num, '-->', True)
-    else:
-        print('Numero selecionado: ', num, '-->', False)
+        Função que recebe um número,
+        Retorna TRUE
+            se ele estiver o valor absoluto de (100-num) menor ou igual a 10,
+            ou se ele estiver o valor absoluto de (200-num) menor ou igual a 10
+        Caso contrario, retorna FALSE.
 
-verifique_numero(20)
-verifique_numero(100)
-verifique_numero(150)
+        O valor absoluto de um número é o seu valor sem considerar o sinal. Ou seja, é sempre positivo
+    """
+    if  abs(100 - num) <= 10 or abs(200 - num) <= 10:
+        print('Numero selecionado: ', num, '--> Considerando ABS (valor absoluto) o resultado é:', True)
+    else:
+        print('Numero selecionado: ', num, '--> Considerando ABS (valor absoluto) o resultado é:', False)
+
+verifique_numero_abs(90)
+verifique_numero_abs(104)
+verifique_numero_abs(150)
+verifique_numero_abs(200)
 
 print('\n')
 
+####################################################### Level 2 #######################################################
+
 def verifica_numeros_iguais(lista=None):
     """
-        Metodo que verifica uma lista de inteiros, retorne True se o array contiver um 3 próximo a um 3 em algum lugar.
+        Função que verifica uma lista de inteiros, retorne True se o array contiver um 3 próximo a um 3 em algum lugar.
         Caso contrario retorna False
     """
     if lista is None:
@@ -120,7 +130,7 @@ print('\n')
 
 def string_com_varias_letras(palavra):
     """
-        Metodo que recebe uma string, e retornar uma string onde para cada caractere da string original a nova string
+        Função que recebe uma string, e retornar uma string onde para cada caractere da string original a nova string
         terá o caractere repetido três vezes.
     """
     nova_palavra = ''
@@ -136,7 +146,7 @@ print('\n')
 
 def mais_ou_menos(num1, num2, num3):
     """
-        Metodo que recebe três números inteiros entre 1 e 11
+        Função que recebe três números inteiros entre 1 e 11
         Se a soma deles for menor ou igual a 21, retorna a soma deles.
         Se a soma deles exceder 21 e houver um número 11 informado, subtraia 10 da soma.
         Por fim, se a soma (mesmo após o ajuste) exceder 21, retorna a string 'BUST'.

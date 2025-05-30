@@ -57,35 +57,6 @@ for item in acoes:
     print(item)
 
 #############################################################################
-work_hours = [('Maria', 40), ('João', 35), ('Ana', 45), ('Pedro', 30)]
-def employee_hours(work_hours):
-    for employee, hours in work_hours:
-        print(f"O funcionário {employee} trabalhou {hours} horas esta semana.")
-
-def trabalhou_mais(work_hours):
-    '''
-    LAMBDA é uma função anônima que pode ter qualquer número de argumentos, mas apenas uma expressão.
-    Quando uma função é simples e não precisa de um nome, você pode usar uma função lambda.
-    '''
-    max_hours = max(work_hours, key=lambda x: x[1])
-    print(f"O funcionário que trabalhou mais horas foi '{max_hours[0]}' com '{max_hours[1]}' horas.")
-
-def trabalhou_mais_opcao2(work_hours):
-    hour_max = 0
-    employee_max = ''
-
-    for employee, hours in work_hours:
-        if hours > hour_max:
-            hour_max = hours
-            employee_max = employee
-        else:
-            pass
-
-    print(f"O funcionário que trabalhou mais horas foi '{employee_max}' com '{hour_max}' horas")
-
-employee_hours(work_hours)
-trabalhou_mais(work_hours)
-trabalhou_mais_opcao2(work_hours)
 
 print("\n")
 
