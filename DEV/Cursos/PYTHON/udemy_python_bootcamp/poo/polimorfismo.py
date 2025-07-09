@@ -5,23 +5,26 @@
         Quando o metodo for chamado, a linguagem irá determinar qual implementação usar com base no tipo do objeto.
 """
 class Animal:
+    """
+        Classe PAI
+    """
     def __init__(self, nome):
         self.nome = nome
 
     def emitir_som(self):
-        raise NotImplementedError("Subclasses devem implementar este método abstrato.")
+        raise NotImplementedError("Classes FILHAS devem implementar este método abstrato.")
 
 
 class Cachorro(Animal):
     """
-        Classe Cachorro herda de Animal e implementa o metodo emitir_som com AU AU
+        Classe FILHA Cachorro herda de Animal e implementa o metodo emitir_som com AU AU
     """
     def emitir_som(self):
         return f"{self.nome} diz: Au Au!"
 
 class Gato(Animal):
     """
-        Classe Gato herda de Animal e implementa o metodo emitir_som com MIAU
+        Classe FILHA Gato herda de Animal e implementa o metodo emitir_som com MIAU
     """
     def emitir_som(self):
         return f"{self.nome} diz: Miau!"
