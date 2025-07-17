@@ -1,0 +1,121 @@
+No DDD (Domain-Driven Design), as pastas têm os seguintes objetivos:  
+
+	DOMAIN: Contém o núcleo do domínio, incluindo entidades, agregados, value objects, repositórios (interfaces), serviços de domínio e regras de negócio. É independente de frameworks e infraestrutura.  
+
+	APPLICATION: Orquestra casos de uso do sistema, coordenando operações entre objetos do domínio e serviços externos. Não contém lógica de negócio, mas sim lógica de aplicação (ex: serviços de aplicação, unit of work, comandos).  
+
+	INFRASTRUCTURE: Implementa detalhes técnicos, como persistência, integração com APIs externas, envio de e-mails, etc. Fornece implementações concretas para interfaces definidas no domínio e na aplicação.
+
+Essas separações ajudam a manter o código organizado, desacoplado e fácil de evoluir.
+
+-------------------------------------------------------------------------------------
+Subpastas de APPLICATION
+	Aqui está a finalidade de cada pasta dentro da camada da aplicação:
+
+	COMMANDS
+		Contém objetos de comando que representam ações ou intenções para alterar o estado do sistema (Ex: operações de criação, atualização e exclusão). Seu objetivo é definir a estrutura de dados necessário ao realizar uma operação
+	
+	DEPENDENCIES
+		Local que define as dependências (services, repositórios, adapters) que serão injetadas nos handlers e use cases da aplicação. Podemos utilizá-lo com o padrão Dependency Injection do FastAPI.
+
+	EVENT_HANDLERS 
+		Contém manipuladores que reagem a eventos de domínio ou integração, executando efeitos colaterais ou acionando fluxos de trabalho.
+
+	HANDLERS 
+		É útil para desacoplar comandos/eventos, mas não é obrigatório.
+		Ele recebe o comando (que contém os dados necessários para a operação), valida regras de negócio, interage com o domínio e repositórios, e executa a ação
+
+	QUERIES
+		É responsável pelas consultas que recuperam dados do sistema, sem alterar o estado do domínio.
+
+	RESPONSE
+		Armazena modelos de resposta ou DTOs (Objetos de Transferência de Dados) usados ​​para estruturar a saída retornada por serviços de aplicativo ou APIs.
+
+	ROUTERS 
+		Contém definições de rota ou configurações de endpoint de API, conectando solicitações HTTP à lógica do aplicativo. Documentações que serão exibidas no swagger estarão documentadas aqui como codigos de retorno. Alem disso, o caso de uso que será utilizado tambem será chamado aqui
+
+	UNIT_OF_WORK
+		Implementa o padrão Unidade de Trabalho, gerenciando transações e garantindo operações atômicas em vários repositórios.
+
+	USE_CASE
+		Contém classes de casos de uso ou serviços que encapsulam processos de negócios específicos ou lógica de aplicativo, orquestrando entidades, repositórios e serviços.
+
+-------------------------------------------------------------------------------------
+Subpastas de DOMAIN
+	Aqui está a finalidade de cada pasta dentro da camada de domínio:
+
+	ENTITIES
+		Contem as entidades do dominio. 
+		Responsável pela modelagem das propriedades, regras de negócio e manipulação de estado relacionadas a entidade em questão. Então, uma boa prática é criar um arquivo novo para cada entidade do dominio.
+
+	REPOSITORIES
+		Deve conter classes ou funções responsáveis apenas pelo acesso e manipulação dos dados relacionados ao contrato, sem lógica de negócio. Exemplo de operações que podem existir SAVE, CREATE, UPDATE ... 
+
+	SERVICES
+		Contem serviços do domínio e responsibilidade de fazer a chamada das ENTITIES de acordo com a logica de execução esperada. Pode conter classes ou funçãoes que não pertencem naturalmente a entidade ou ao objeto de valor. 
+		A camada de SERVIÇO comunica com repositorio
+		SERVICES coordenam operações entre múltiplas entidades ou executam operações complexas de domínio e não dependem da infraestutura.
+		
+	
+	VALUE OBJECTS
+		Contém objetos de valor, que são objetos imutáveis ​​definidos apenas por seus atributos (sem identidade), como Dinheiro, Endereço ou Moeda. Eles representam conceitos no domínio que são comparados por valor.
+Essa estrutura ajuda a manter a lógica de negócio organizada, testável e independente de questões de infraestrutura.
+
+
+-------------------------------------------------------------------------------------
+Subpastas de INFRASTRUCTURE
+	Aqui está a finalidade de cada pasta dentro da camada de infraestrutura:
+
+
+	ACL (Anti-Corruption Layer)
+		Contém componentes da Camada Anticorrupção. São adaptadores ou tradutores que isolam o domínio de sistemas externos ou código legado, garantindo que modelos ou comportamentos externos não "corrompam" a lógica do domínio.
+
+	READY_MODELS 
+		Armazena modelos de dados prontos para uso pela infraestrutura, geralmente como DTOs (Objetos de Transferência de Dados) ou esquemas para integração com APIs externas, serialização ou desserialização.
+
+	BANCO_DADOS
+		Contém todo o código relacionado ao banco de dados que está sendo utilizado, como modelos ORM, sessões de banco de dados e implementações de repositório que interagem com o banco de dados.
+
+Essa estrutura ajuda a manter as questões de infraestrutura organizadas e separadas da lógica do domínio.
+
+
+-------------------------------------------------------------------------------------
+Metodo abstrato
+
+	Um método abstrato é um método declarado em uma classe base (geralmente usando ABC e @abstractmethod em Python), mas que não possui implementação. Ele serve como um contrato: classes filhas devem obrigatoriamente implementar esse método. Não é possível instanciar a classe que contém métodos abstratos diretamente. 
+
+	Exemplo classe abstrata
+	--------------------------	
+	from abc import ABC, abstractmethod
+
+	class Animal(ABC):
+    		@abstractmethod
+    		def fazer_som(self):
+        	pass
+
+	Implementando uma classe abstrata
+	Cada subclasse implementa "fazer_som" de acordo com o som do animal.
+	---------------------------------
+	class Cachorro(Animal):
+    		def fazer_som(self):
+        	return "Au au!"
+
+	class Gato(Animal):
+    		def fazer_som(self):
+       		return "Miau!"
+
+-------------------------------------------------------------------------------------
+Contrato
+
+	Em DDD (Domain-Driven Design), um "contrato" geralmente se refere a uma interface ou um acordo explícito que define como diferentes partes do sistema interagem. Ele especifica o comportamento esperado, entradas e saídas, mas não a implementação.  
+
+Exemplos de contratos em DDD:  
+	INTERFACE DE REPOSITRIO
+		Definem métodos para acessar objetos do domínio, mas não como os dados são armazenados.
+	INTERFACE DE SERVIÇO
+		Especificam operações disponíveis na camada de domínio ou aplicação.
+	INVARIANTES de Value Object
+		Definem regras que sempre devem ser verdadeiras para um value object.
+
+Objetivo do contrato
+	Contratos ajudam a desacoplar a lógica de domínio da infraestrutura e dos detalhes de implementação, tornando o sistema mais flexível, testável e fácil de manter.
