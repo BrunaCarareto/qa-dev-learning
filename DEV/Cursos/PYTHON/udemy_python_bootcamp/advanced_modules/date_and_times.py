@@ -18,3 +18,14 @@ date1 = datetime.date(2020, 1, 1)
 date2 = datetime.date(2050, 1, 2)
 result = date2 - date1
 print(result.days) # Accessing the number of days in the timedelta object
+
+
+#####################################################################################################################
+from time import time, sleep
+
+start_time = time()
+result = 10+20
+sleep(5)  # Simulating a delay of 5 seconds
+end_time = time()
+tempo_execucao = end_time - start_time
+print(f"Tempo de execução foi de: {tempo_execucao} segundos")

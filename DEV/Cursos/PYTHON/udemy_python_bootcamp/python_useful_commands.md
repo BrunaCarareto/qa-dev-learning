@@ -83,3 +83,11 @@ You can create **requirements.txt** file with all packages required to execute t
 After that, when you clone the repo again, you don´t need to configure everything again
 - To install all packages required to use the repo with the virtual environment activated, execute the following command:
 > pip install -r requirements.txt
+
+
+Useful libraries to work with web 
+```
+    pip install requests
+    pip install lxml
+    pip install bs4
+```
