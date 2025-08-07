@@ -6,7 +6,7 @@
 
 import pypdf
 
-file = open('pdf_example.pdf', 'rb')
+file = open('pdf_example.pdf', 'rb')    # rb = read binary
 pdf_reader = pypdf.PdfReader(file)
 
 
