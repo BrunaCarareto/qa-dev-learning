@@ -24,3 +24,4 @@ botao.pack()
 
 # Inicia o loop da aplicação
 janela.mainloop()
+
