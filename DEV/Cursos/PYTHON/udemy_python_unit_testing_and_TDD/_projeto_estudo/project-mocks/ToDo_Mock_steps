@@ -1,0 +1,9 @@
+using MOCKS
+------------
+"spec" parameter to set the interface of the class
+"side_effect" parameter to set the function that will be called with the mock
+"return_value" parameter to set the return value of the mock
+
+x Can call readFromFile
+- ReadFromFile returns correct string
+- ReadFromFile returns exception when file does not exists
