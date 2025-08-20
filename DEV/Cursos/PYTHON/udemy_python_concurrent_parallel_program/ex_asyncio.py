@@ -1,4 +1,4 @@
-import asyncio
+import ex_asyncio
 
 async def tarefa(nome):
     print(f"{nome} iniciou")
